@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+           p{ display:inline; }
+    </style>
+</head>
+<body>
+   <div>
+       <p>Hello</p>
+       <p>World</p>
+   </div> 
+</body>
+<script>
+    var array = [1, 2, 3, 4];
+    var result = array.map(function(item){
+        return item + 10;
+    }).reduce(function(sum ,item) {
+        return sum + item;
+    })
+    .toString()
+    .split('')
+</script>
+</html>
