@@ -152,7 +152,6 @@ quiz:
         System.out.println(number3 == number4);
       }
       ```
-
       以上代码的输出结果为？
     options:
       - "true true"
@@ -160,7 +159,6 @@ quiz:
       - "false false"
       - "false true"
     answer: 2
-
    - content: >
       ```
       abstract class Animal {
@@ -190,4 +188,66 @@ quiz:
       - "代码编译错误，应该去掉abstract关键字"
       - "代码编译错误，应该去掉Dog类中saySomething的具体实现"
     answer: 3
-  
+  - content: >
+      ```
+      public class Student {
+        private String name;
+        private int age;
+        
+        public Student(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+      }
+
+      List<Student> students = new ArrayList<>();
+      students.add(new Student("zhangsan", 23));
+      students.add(new Student("lisi", 24));
+      ```
+
+      对于上面集合students，可以用下面的哪些方法实现遍历：
+    options:
+      - "for (int i = 0; i < students.size(); i++) {}"
+      - "for (Student student : students) {}"
+      - "while (students.iterator().hasNext()) {}"
+      - "students.forEach(student -> {})"
+    answer: 1 2 3 4
+  - content: >
+      ```
+      public class Student {
+        private String name;
+        private int age;
+        
+        public Student(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+        public String getName() {
+            return name;
+        }
+        public int getAge() {
+            return age;
+        }
+      }
+
+      List<Student> students = new ArrayList<>();
+      students.add(new Student("zhangsan", 23));
+      students.add(new Student("lisi", 24));
+      students.add(new Student("wangwu", 18));
+      students.add(new Student("zhaoliu", 21));
+      ```
+
+      对于上面集合students，下面操作正确的是：
+    options:
+      - "可以用该方法实现students的年龄从小到大排序：students.sort((student1, student2) -> student1.getAge() - student2.getAge());"
+      - "可以用该方法实现students的年龄从小到大排序：students.stream().sorted(Comparator.comparingInt(Student::getAge))"
+      - "可以用该方法获得所有学生年龄的平均数：students.stream().mapToInt(Student::getAge).average()"
+      - "可以用该方法获得年龄大于20岁的学生集合：students.stream().filter(student -> student.getAge() > 20).collect(Collectors.toList())"
+    answer: 1 3 4
+  - content: "对于观察者模式，你对其掌握的程度是:"
+    options:
+      - "没听说过"
+      - "听说过，但不是很清楚"
+      - "理解概念但没用过"
+      - "理解概念并在练习中使用过"
+    answer: 
