@@ -1,0 +1,155 @@
+quiz:
+  - content: > 
+      为类成员变量添加下列哪一个注解类，从而能获取下面的配置属性
+      ```
+
+        com.demo.user.name="李四"
+      ```
+    options:
+      - "@Autowired"
+      - "@Value"
+      - "@component"
+      - "@FieldValue"
+    answer: 2
+  - content: > 
+      @RestController描述不正确的是
+    options:
+      - "@RestController可以配置参数比@Controller丰富"
+      - "@RestController依赖于@Controller"
+      - "@RestController依赖于@ResponseBody,所以默认返回Json格式"
+      - "@RestController标记一个类是控制器Controller"
+    answer: 1
+  - content: > 
+      @RequestMapping中的method属性支持哪几种请求方式
+    options:
+      - "GET"
+      - "PATCH"
+      - "DELETE"
+      - "ADD"
+    answer: 1,2,3
+  - content: > 
+      为@RequestMapping中的value属性定义url动态参数正确的是
+    options:
+      - "@RequestMapping(value="/#{id}", method=RequestMethod.GET)"
+      - "@RequestMapping(value="/${id}", method=RequestMethod.GET)"
+      - "@RequestMapping(value="/:id", method=RequestMethod.GET)"
+      - "@RequestMapping(value="/{id}", method=RequestMethod.GET)"
+    answer: 4
+  - content: > 
+      @RequestBody通常用于处理下面哪一项数据格式
+    options:
+      - "application/x-www-form-urlcoded"
+      - "application/octet-stream"
+      - "application/json"
+      - "text/plain"
+    answer: 3
+  - content: > 
+      以下哪几项是SpringBoot中统一处理异常的注解 
+    options:
+      - "@ErrorHandler"
+      - "@ControllerAdvice"
+      - "@ExceptionHandler"
+      - "@ControllerError"
+    answer: 1,3
+  - content: > 
+      @ControllerAdvice与@ExceptionHandler描述错误的是
+    options:
+      - "@ControllerAdvice类注解，作用于整个spring工程"
+      - "@ExceptionHandler方法注解，作用于Controller"
+      - "@ExceptionHandler的优先级比@ControllerAdvice高"
+      - "@ExceptionHandler的优先级比@ControllerAdvice低"
+    answer: 4 
+  - content: > 
+      Spring以Bean的方式管理所有的组件，此处的Bean指的是
+    options:
+      - "必须符合JavaBean设计"
+      - "任何Java对象以及Java组件都视为Bean"
+      - "必须要有getter方法和setter方法"
+      - "EJB组件"
+    answer: 2
+  - content: > 
+      下列不是Spring的依赖注入方式
+    options:
+      - "setter注入"
+      - "静态方法注入"
+      - "构造注入"
+      - "注解的注入"
+    answer: 2
+  - content: > 
+      下列不是Ioc容器优点的是？
+    options:
+      - "容易实现可插拔，可替换的组件"
+      - "实现组件之间的解耦，提高程序的灵活性和可维护性"
+      - "享受单例的好处，效率高，不浪费空间"
+      - "创建对象的步骤变简单了，更加直观"
+    answer: 4
+  - content: > 
+      下列关于AOP的说法正确的是（ ）
+    options:
+      - "AOP将散落在系统中的“方面”代码集中实现"
+      - "AOP有助于提高系统的可维护性"
+      - "AOP已经表现出了将要替代面向对象的趋势"
+      - "AOP是一种设计模式，Spring为其提供了一种实现"
+    answer: 1,2,4 
+  - content: > 
+      下了哪个不是声明bean的注解？
+    options:
+      - "@Service"
+      - "@Autowired"
+      - "@Repository"
+      - "@Controller"
+    answer: 2
+ - content: > 
+      下面哪个注解不是@SpringbootApplication包含的默认属性值
+    options:
+      - "@SpringBootConfiguration"
+      - "@EnableAutoConfiguration"
+      - "@Documented"
+      - "@Bean"
+    answer: 4
+ - content: > 
+      以下不是Spring Boot Ioc容器的是
+    options:
+      - "ApplicationContext"
+      - "BeanFactory"
+      - "ApplicationFactory"
+      - "ApplicationContext"
+    answer: 1,3 
+ - content: >
+    ```
+
+      @ExceptionHandler(value = FileNotFoundException.class)
+      public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
+        //todo 
+      }
+      以下对代码描述正确的是
+    ``` 
+    options:
+      - "此函数监听处理所有异常"
+      - "此函数只监听处理文件找不到的异常"
+      - "此函数不监听处理文件找不到的异常"
+      - "此函数不监听处理异常"
+    answer: 2 
+ - content: >
+    ```
+
+      @ExceptionHandler(value = FileNotFoundException.class)
+      public Error jsonErrorHandler(HttpServletRequest req, Exception e) throws Exception {
+        //return json
+      }
+      以上代码函数返回值是Json, 需要增加什么注解才能实现 
+    ``` 
+    options:
+      - "@ResponseBody"
+      - "@ResponseJson"
+      - "@Json"
+      - "@RequestBody"
+    answer: 1 
+ - content: > SpringMVC thymeleaf模板知识点 
+    options: 
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用

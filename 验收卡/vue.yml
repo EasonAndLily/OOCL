@@ -1,0 +1,278 @@
+quiz:
+  - content: >
+      ```
+
+      <template>
+        <div id="app">
+          <div v-for="item in items" :key="item">{{ item }}</div>
+        </div>
+      </template>
+      <script>
+      export default {
+        name: "app",
+        data() {
+            return {
+                items: ["A", "B", "C"]
+            }
+        },
+      };
+      </script>
+
+      ```
+      在console面板执行``` $vm.items[1] = 'x' ```， 界面渲染的字符为
+    options:
+      - "ABC"
+      - "AxC"
+      - "AXC"
+      - "不显示"
+    answer: 1
+  - content: >
+      以下哪一项不能触界面重新渲染
+    options:
+      - "$vm.items.splice(1, 1, 'X')"
+      - "$vm.$set($vm.items, 1, 'X')"
+      - "$vm.items.push('X')"
+      - "$vm.items.length = 4"
+    answer: 4
+  - content: >
+      ```
+
+      var vm = new Vue({
+        el: '#example',
+        data: {
+          message: 'Hello'
+        },
+        computed: {
+          newMessage: function () {
+            return this.message + "World";
+          }
+        }
+      })
+      ```
+      ```
+      <div id="example">
+        <p>{{ newMessage }}</p>
+      </div>
+      ```
+      以上代码浏览器上将显示的文字是？
+    options:
+      - "Hello"
+      - "World"
+      - "Hello World"
+      - "HelloWorld"
+    answer: 4
+  - content: >
+      ```
+
+      <template>
+        <div id="app">
+          <div>first time: {{ now }}</div>
+          <div>second time: {{ now }}</div>
+        </div>
+      </template>
+      <script>
+      export default {
+        name: "app",
+        computed: {
+          now() {
+            return Date.now();
+          }
+        }
+      };
+      </script>
+      ```
+      以上first time和second time显示的时间是否一致？
+    options:
+      - "相同"
+      - "不相同"
+    answer: 1 
+  - content: >
+      以下对```v-show```描述错误的是？
+    options:
+      - "v-show 总是会渲染元素"
+      - "v-show 只是对元素CSS display属性的切换"
+      - "v-show 初始开销低于 v-if"
+      - "v-show 不支持<template>元素"
+    answer: 3
+  - content: >
+      ```
+
+      <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
+      </div>
+      <div v-else>
+        Don't Down
+      </div>
+      ```
+      当 type === 'D' 时应该显示什么？ 
+    options:
+      - "A"
+      - "B"
+      - "C"
+      - "Don't Down"
+    answer: 4
+  - content: >
+      以下哪一项不是事件修饰符？
+    options:
+      - ".stop"
+      - ".self"
+      - ".count"
+      - ".once"
+    answer: 3
+  - content: >
+      以下哪一项不是Vue按键码别名？
+    options:
+      - ".enter"
+      - ".add"
+      - ".tab"
+      - ".delete"
+    answer: 2
+  - content: >
+      以下哪一项不是系统修饰键？
+    options:
+      - ".ctrl"
+      - ".alt"
+      - ".meta"
+      - ".fn"
+    answer: 4
+  - content: >
+      以下哪一项不是鼠标按钮修饰符？
+    options:
+      - ".left"
+      - ".right"
+      - ".middle"
+      - ".scroll"
+    answer: 4
+  - content: >
+      下面选项正确定义```count``` 属性的是？
+    options:
+      - "props:['count']"
+      - "props: ('count')"
+      - "props: () => ['count']"
+      - "props: { count }"
+    answer: 1
+  - content: >
+      在vue组件中，传递props写法正确的是?
+    options:
+      - "v-on:count='1'"
+      - "@count='1'"
+      - "v-bind:count='1'"
+      - "&count='1'"
+    answer: 3
+  - content: >
+      以下哪一项不是vue props的类型？
+    options:
+      - "number"
+      - "String"
+      - "Function"
+      - "Promise"
+    answer: 1
+  - content: >
+      ```
+      Vue.component('blog-post', {
+        props: ['userName'],
+        template: '<h3>{{ userName }}</h3>'
+      })
+      ```
+      以下选项中为```blog-post```组件 ```userName```属于传值写法正确的是？
+    options:
+      - "<blog-post userName='hello'></blog-post>"
+      - "<blog-post user-name='hello'></blog-post>"
+      - "<blog-post username='hello'></blog-post>"
+      - "<blog-post UserName='hello'></blog-post>"
+    answer: 2
+  - content: >
+      ```
+
+      <template>
+        <div id="app">
+            <div v-bind:style="{ 'background-color': activeColor, width: '50px', height: '50px' }"></div>
+            </div>
+      </template>
+
+      <script>
+      export default {
+        name: "app",
+        data() {
+          return {
+            activeColor: "red",
+          }
+        },
+      };
+      </script>
+
+      ```
+      以上代码 ```div```显示什么颜色？
+    options:
+      - "绿色"
+      - "红色"
+      - "不显示"
+    answer: 2
+  - content: >
+      ```
+
+      <template>
+        <div id="app">
+            <div v-bind:style="rectangleStyle"></div>
+            </div>
+      </template>
+
+      <script>
+      export default {
+        name: "app",
+        data() {
+          return {
+            rectangleStyle: {
+              'background-color': 'red'
+            },
+          }
+        },
+      };
+      </script>
+
+      ```
+      以上代码 ```div```显示什么颜色？
+    options:
+      - "绿色"
+      - "红色"
+      - "不显示"
+    answer: 3
+  - content: >
+      下面javascript语法在模板语法无效的是？
+    options:
+      - "{{ number + 1 }}"
+      - "{{ size > 0 ? 'Big' : 'Small' }}"
+      - "{{ array.join(';') }}"
+      - "const count = 1"
+    answer: 4
+  - content: >
+      下面动态参数写法正确的是?
+    options:
+      - "<a [attributeName]='url'>"
+      - "<a v-bind:['attribute' + Name  ]='url'>"
+      - "<a v-bind:['attributeName']='url'>"
+      - "<a v-bind:[attributeName]='url'>"
+    answer: 4
+  - content: >
+      以下哪一项不是vue模板语法的修饰符？
+    options:
+      - ".count"
+      - ".lazy"
+      - ".trim"
+      - ".number"
+    answer: 1 
+  - content: >
+      下面哪一项的对应的缩写不正确?
+    options:
+      - "v-on:click => @click"
+      - "v-bind:todo => :todo"
+      - "v-on:click => :click"
+    answer: 3
+  - content: >
+      请绘制vue组件的生命周期流程图
