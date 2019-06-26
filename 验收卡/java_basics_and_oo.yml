@@ -13,6 +13,13 @@ quiz:
       - ".html"
       - ".exe"
     answer: 2
+  - content: "关于Java语言叙述错误的是:"
+    options:
+      - "Java语言具有跨平台性"
+      - "Java是一种面向对象的语言"
+      - "Java语言中的类可以多继承"
+      - "Java的垃圾收集机制自动回收程序已不再使用的对象"
+    answer: 3
   - content: "不允许作为类及类成员的访问控制修饰符是:"
     options:
       - "public"
@@ -20,6 +27,118 @@ quiz:
       - "static"
       - "protected"
     answer: 3
+  - content: "关于类和对象的叙述正确的是:"
+    options:
+      - "Java的类分为两大部分：系统定义的类和用户自定义的类 "
+      - "类的静态属性和全局变量的概念完全一样，只是表达形式不同"
+      - "类的成员至少有一个属性和一个方法"
+      - "类是对象的实例化"
+    answer: 1
+  - content: "以下有关构造方法的说法，正确的是:"
+    options:
+      - "一个类的构造方法可以有多个 "
+      - "构造方法在类定义时被调用"
+      - "构造方法只能由对象中的其它方法调用"
+      - "构造方法可以和类同名，也可以和类名不同"
+    answer: 1
+  - content: "以下有关类的继承的叙述中，正确的是：:"
+    options:
+      - "子类能直接继承父类所有的非私有属性，也可通过接口继承父类的私有属性 "
+      - "子类只能继承父类的方法，不能继承父类的属性"
+      - "子类只能继承父类的非私有属性，不能继承父类的方法"
+      - "子类不能继承父类的私有属性"
+    answer: 4
+  - content: "使用interface申明一个接口时，只能使用哪种修饰符修饰该接口？"
+    options:
+      - "public"
+      - "private"
+      - "static"
+      - "protected"
+    answer: 1
+  - content: "在使用super 和this关键字时，以下描述正确的是:"
+    options:
+      - "在子类构造方法中使用super()显示调用父类的构造方法，super()必须写在子类构造方法的第一行，否则编译不通过"
+      - "super()和this()不一定要放在构造方法内第一行"
+      - "this()和super()可以同时出现在一个构造函数中"
+      - " this()和super()可以在static环境中使用，包括static方法和static语句块"
+    answer: 1
+  - content: "多态的表现形式有:"
+    options:
+      - "重写"
+      - "抽象"
+      - "继承"
+      - "封装"
+    answer: 1
+  - content: "以下对重载描述错误的是:"
+    options:
+      - "方法重载只能发生在一个类的内部"
+      - "构造方法不能重载"
+      - "重载要求方法名相同，参数列表不同"
+      - "方法的返回值类型不是区分方法重载的条件"
+    answer: 2
+  - content: "以下对异常的描述不正确的有:"
+    options:
+      - "异常分为Error和Exception"
+      - "Throwable是所有异常类的父类"
+      - "Exception是所有异常类父类"
+      - "Exception包括RuntimeException和RuntimeException之外的异常"
+    answer: 3
+  - content: "在Java中，关于HashMap类的描述，以下描述错误的是:"
+    options:
+      - "HashMap使用键/值得形式保存数据"
+      - "HashMap 能够保证其中元素的顺序"
+      - "HashMap允许将null用作键"
+      - "HashMap允许将null用作值"
+    answer: 2
+  - content: "Java中的集合类包括ArrayList、LinkedList、HashMap等类，下列关于集合类描述错误的是:"
+    options:
+      - "ArrayList和LinkedList均实现了List接口"
+      - "ArrayList的访问速度比LinkedList快"
+      - "添加和删除元素时，ArrayList的表现更佳"
+      - "HashMap实现Map接口，它允许任何类型的键和值对象"
+    answer: 3
+  - content: "在Java中，可用于创建链表数据结构的对象的是:"
+    options:
+      - "LinkedList"
+      - "ArrayList"
+      - "Collection"
+      - "HashMap"
+    answer: 1
+  - content: "下列关于Stream流的叙述，错误的是:"
+    options:
+      - "Java 8 API添加的一个新的抽象，可以让你以一种声明的方式处理数据"
+      - "Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码"
+      - "这种风格将要处理的元素集合看作一种流， 流在管道中传输， 并且可以在管道的节点上进行处理"
+      - "流是某种元素的集合，是一种存储数据的结构。"
+    answer: 4
+  - content: "下列关于Stream流的操作，错误的是:"
+    options:
+      - "可以对流进行迭代遍历"
+      - "可以对流进行过滤排序操作"
+      - "可以对流进行映射(map)等操作"
+      - "不能对流进行组合操作，但可以进行聚合操作"
+    answer: 4
+  - content: "下列关于Optional的叙述，错误的是:"
+    options:
+      - "是Java 8为了解决NullPointerException而推出的新特性"
+      - "isEmpty是用来检查Optional对象是否为空的"
+      - "isPresent和ifPresent都可以用来检查Optional为空，且用法一致"
+      - "当Optional为有异常时，可以用orElseThrow来抛出"
+    answer: 3
+  - content: "下列不属于Java项目构建工具的是:"
+    options:
+      - "ant"
+      - "maven"
+      - "gradle"
+      - "webpack"
+    answer: 4
+  - content: "下列Gradle命令中，属于清理构建物的命令是:"
+    options:
+      - "./gradlew clean"
+      - "./gradlew build"
+      - "./gradlew test"
+      - "./gradlew -v"
+    answer: 1
   - content: >
       ```
       int [ ] nums = {1,2,3,4,5,6};
