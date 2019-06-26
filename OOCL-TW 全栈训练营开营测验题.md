@@ -128,7 +128,7 @@
 3. 【多选】若要使两个文字在同一行显示,则下面选项中CSS正确的是?
    ```html
     <div>
-        <div>Hello</div>
+        <p>Hello</p>
         <p>World</p>
     </div>
    ```
@@ -140,7 +140,7 @@
 
     D. p{ display: inline-block}
 
-    **答案** A, C, D
+    **答案** A, B, D
 
 4. 以下哪一项描述正确
     ```css
