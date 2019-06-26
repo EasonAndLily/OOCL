@@ -145,7 +145,8 @@ quiz:
       - "@Json"
       - "@RequestBody"
     answer: 1 
- - content: > SpringMVC thymeleaf模板知识点 
+ - content: > 
+      对于Ioc你掌握的程度是? 
     options: 
       - 没听说过
       - 听说过，但不是很清楚
@@ -153,3 +154,23 @@ quiz:
       - 理解概念但没用过
       - 理解概念并在练习中使用过
       - 理解概念并在真实项目中合理使用
+ - content: > 
+      对于AOP你掌握的程度是? 
+    options: 
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+ - content: > 
+      对于Spring Configuration你掌握的程度是? 
+    options: 
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+ - content: > 
+      绘制Spring AOP的概念图  

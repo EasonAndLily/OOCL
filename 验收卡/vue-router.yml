@@ -1,0 +1,44 @@
+# vue router的使用
+
+quiz:
+  - content: >
+      导航后在history中不留下记录，应该在```<router-link>```设置什么属性？
+    options:
+      - "append"
+      - "reset"
+      - "replace"
+      - "add"
+    answer: 3
+  - content: >
+      以下哪一项不是```vue-router```的模式? 
+    options:
+      - "history"
+      - "hash"
+      - "default"
+      - "abstract"
+    answer: 3
+  - content: >
+      使用动态路由参数，以下哪一项是正确的path？
+    options:
+      - "product/:id"
+      - "product/#{id}"
+      - "product/$id"
+      - "product/{{ id }}"
+    answer: 1
+  - content: >
+     复用组件时，想对路由参数的变化作出响应的话, 应该使用哪一个导航守卫函数监听
+    options:
+      - "beforeRouteEnter"
+      - "beforeResolve"
+      - "beforeEnter"
+      - "beforeRouteUpdate"
+    answer: 4
+  - content: >
+     以下对于```router.push```函数传参不正确的是 
+    options:
+      - "router.push({ name: 'product', params: { id }})"
+      - "router.push({ path: '/product/${id}' })"
+      - "router.push('product')"
+      - "router.push({ path: '/product', params: { id }})"
+    answer: 4
+  

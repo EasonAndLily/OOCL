@@ -1,0 +1,80 @@
+# vuex管理状态
+
+quiz:
+  - content: >
+      以下哪一项不是```store```属性 
+    options:
+      - "state"
+      - "getters"
+      - "actions"
+      - "reducers"
+    answer: 4
+  - content: >
+      以下哪一项不是vuex组件绑定的辅助函数
+    options:
+      - "mapState"
+      - "mapGetters"
+      - "mapAction"
+      - "mapMutations"
+    answer: 3
+  - content: >
+      在子组件中获取```store```对象，下面哪一项是正确的 
+    options:
+      - "this.store"
+      - "this.store()"
+      - "store"
+      - "this.$store"
+    answer: 4
+  - content: >
+      已知store中存在name属性， 下面哪个对象传入mapState函数会出现错误?
+    options:
+      - "{name: state => state.name}"
+      - "['name']"
+      - "{ 'count' }"
+      - "{ getName(state) { return state.name; } }"
+    answer: 3
+  - content: >
+      对```getter```描述不正确的是
+    options:
+      - "getter返回值会根据它的依赖被缓存起来"
+      - "只有getter的依赖变化时，才会重新调用其函数计算"
+      - "getter只能返回一个对象值"
+      - "mapGetters函数可以将store中的getter映射至局部计算属性"
+    answer: 3 
+  - content: >
+      对```mutation```描述不正确的是
+    options:
+      - "支持异步函数"
+      - "它是改变store中状态的唯一方法"
+      - "mutation都有一个字符串类型的事件类型(type)和回调函数(handler)"
+      - "mutation的回调函数必须返回一个新的对象"
+    answer: 1
+  - content: >
+      对```action```描述正确的是
+    options:
+      - "必须是同步函数"
+      - "store.dispatch不支持传入对象参数"
+      - "通过store.dispatch函数来触发"
+      - "action中不能使用async和await关键字"
+    answer: 3
+  - content: >
+      ```
+      const store = new Vuex.Store({
+        state: {
+          count: 1
+        },
+        mutations: {
+          increment (state) {
+            state.count++
+          }
+        }
+      })
+      ``` 
+      下面改变state.count的语法正确的是
+    options:
+      - "store.commit('increment')"
+      - "store.commit({ name: 'increment' })"
+      - "store.commit({ action: 'increment' })"
+      - "store.commit({ method: 'increment' })"
+    answer: 1
+    
