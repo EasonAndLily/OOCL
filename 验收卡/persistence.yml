@@ -1,0 +1,25 @@
+quiz:
+  - content: > 
+    对于实体类User(id , name, age), 哪些方法在JpaRepository中自动生成 
+    options:
+      - "findUserById"
+      - "findByIdAndName"
+      - "findById"
+      - "findName"
+    answer: 2, 3 
+  - content: > 
+    对于实体类Car（id，model，year），哪些JPA查询对于获取所有宝马汽车都有效？    
+    options:
+      - "from Car c where c.model=:param"
+      - "select * from Car c where c.model=:param1"
+      - "select c from Car c where c.model=\"bmw\""
+      - "select c from Car c where c.model=:param1"
+    answer: 2 
+  - content: > 
+    哪个注释将JPA Query参数绑定到方法参数？    
+    options:
+      - "@Param"
+      - "@QueryParam"
+      - "@RequestParam"
+      - "@QueryParameter"
+    answer: 1 

@@ -76,12 +76,12 @@ quiz:
       - "注解的注入"
     answer: 2
   - content: > 
-      下列不是Ioc容器优点的是？
+      什么注释用于将值映射到```http://localhost/factorial/{value}```中的方法参数？
     options:
-      - "容易实现可插拔，可替换的组件"
-      - "实现组件之间的解耦，提高程序的灵活性和可维护性"
-      - "享受单例的好处，效率高，不浪费空间"
-      - "创建对象的步骤变简单了，更加直观"
+      - "@Map"
+      - "@Param"
+      - "@RequestParam"
+      - "@PathVariable"
     answer: 4
   - content: > 
       下列关于AOP的说法正确的是（ ）
@@ -115,6 +115,14 @@ quiz:
       - "ApplicationFactory"
       - "ApplicationContext"
     answer: 1,3 
+  - content: >
+      在Spring中，下列关于AOP的理解，正确的有（ ）
+    options:
+      - "面向纵向的"
+      - "面向对象的"
+      - "AOP关注的是面"
+      - "AOP关注的是点"
+    answer: 3
  - content: >
     ```
 
@@ -145,6 +153,107 @@ quiz:
       - "@Json"
       - "@RequestBody"
     answer: 1 
+ - content: >
+      ```
+      public class Office {
+        private String code = "001";
+
+        public String getCode() {
+          return code;
+        }
+
+        public void setCode() {
+          this.code = code;
+        }
+      }
+      ```
+      使用以下哪一个注解可以把Office定义为Bean
+    options:
+      - "@Resource"
+      - "@Component"
+      - "@Autowired"
+      - "@Service"
+    answer: 2
+ - content: >
+      以下是application.properties文件内容
+      ```
+      com.user.firstname=zhang
+      com.user.lastname=san
+      com.user.fullname=?
+      ```
+      如果fullname值由firstname和lastname组成， 那么下面语法正确的是
+    options:
+      - "com.user.fullname=com.user.firstname + com.user.lastname"
+      - "com.user.fullname=${com.user.firstname} + ${com.user.lastname}"
+      - "com.user.fullname=${com.user.firstname}${com.user.lastname}"
+      - "com.user.fullname={com.user.firstname}{com.user.lastname}"
+    answer: 3
+ - content: >
+      以下是application.properties文件内容
+      ```
+      com.user.name=zhangsan
+      com.user.age=14
+      ```
+      ```
+      public class User {
+        private String name;
+        private int age;
+
+        //...getter and setter
+      }
+      ```
+      为User类添加什么注解可以绑定application.properties文件中的值
+    options:
+      - "@Bean"
+      - "@Component"
+      - "@ConfigurationProperties"
+      - "@Entity"
+    answer: 3
+  - content: >
+      ```
+          @Pointcut("")
+          public void pointcut(){ }
+
+          @Before("")
+          public void before() {
+              System.out.println("@Before");
+          }
+
+          @AfterReturning("")
+          public void afterReturning() {
+              System.out.println("@AfterReturning");
+          }
+
+          @After("")
+          public void after() {
+              System.out.println("@After");
+          }
+
+          @AfterThrowing("")
+          public void afterThrowing() {
+              System.out.println("@AfterThrowing");
+          }
+
+          @Around("")
+          public Object around(Method method) throws Throwable {
+              System.out.println("@Around前");
+              try {
+                  method.method()
+                  System.out.println("@Method");
+              } catch (Throwable throwable) {
+                  System.out.println("@Around异常");
+              }
+              System.out.println("@Around后");
+              return result;
+          }
+      ```
+      上述伪代码的执行顺序是？
+    options:
+      - "@Around前 @Before @Method @Around后 @After @AfterReturning"
+      - "@Around前 @Around后 @Before @Method  @After @AfterReturning"
+      - "@Around前 @Method @Around后 @Before @After @AfterReturning"
+      - "@Around前 @Around后 @Method @Before @After @AfterReturning"
+    answer: 1
  - content: > 
       对于Ioc你掌握的程度是? 
     options: 
@@ -173,4 +282,4 @@ quiz:
       - 理解概念并在练习中使用过
       - 理解概念并在真实项目中合理使用
  - content: > 
-      绘制Spring AOP的概念图  
+      绘制Spring IOC的概念图  

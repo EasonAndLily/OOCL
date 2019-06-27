@@ -1,0 +1,92 @@
+quiz:
+  - content: > 
+    以下哪一项不是REST支持的HTTP方法?
+    options:
+      - "GET"
+      - "POST"
+      - "REMOVE"
+      - "PATCH"
+    answer: 3
+  - content: > 
+    Http Code 404描述正确的是 
+    options:
+      - "用户发出的请求针对的是不存在的记录"
+      - "表示用户没有权限"
+      - "表示用户得到授权"
+      - "用户请求的格式不可得"
+    answer: 1
+  - content: > 
+    基于Restful规范, 对PUT描述不正确的是 
+    options:
+      - "PUT操作是幂等的"
+      - "PUT更新某一资源，则必须要更新资源的全部属性"
+      - "PUT创造新资源"
+      - "PUT请求返回改变的属性"
+    answer: 3,4
+  - content: > 
+    ```
+
+    GET /zoos/ID/animals
+    ```
+    以下对上述URI描述正确的是
+    options:
+      - "列出某个指定动物园的所有动物"
+      - "列出所有动物园的所有动物"
+      - "列出所有动物园的指定动物"
+      - "列出某个指定动物园的指定动物"
+    answer: 1 
+  - content: > 
+    服务发生错误的状态码是 
+    options:
+      - "400"
+      - "401"
+      - "502"
+      - "500"
+    answer: 4
+  - content: > 
+    DELETE请求返回的状态码描述正确的是 
+    options:
+      - "200 (OK) - 删除成功，同时返回已经删除的资源"
+      - "202 (No Content) - 删除请求已经被执行，但是没有返回资源"
+      - "204 (Accepted) - 删除请求已经接受，但没有被立即执行"
+    answer: 1
+  - content: > 
+    基于Restful规范, 对PATCH描述不正确的是 
+    options:
+      - "PATCH不是幂等的"
+      - "PATCH返回更新的全部属性"
+      - "PATCH用于更新资源"
+      - "设计PATCH是对PUT的补充"
+    answer: 4
+  - content: > 
+    基于Restful规范, 对PATCH描述不正确的是 
+    options:
+      - "PATCH不是幂等的"
+      - "PATCH返回更新的部分属性"
+      - "PATCH用于更新资源"
+      - "PATCH设计用于完全代替PUT"
+    answer: 4
+  - content: > 
+    设计一个URL，更新指定用户的昵称，以下设计符合Restful协议的是
+    options:
+      - "POST: /users/{id}"
+      - "GET: /users/{id}"
+      - "PATCH: /users/{id}"
+      - "PUT: /users/{id}"
+    answer: 3
+  - content: > 
+    设计一个URL，获取指定部门下指定员工信息，以下设计符合Restful协议的是
+    options:
+      - "GET: /departments/users/{id}/{id}/"
+      - "GET: /departments/{id}/users/{id}"
+      - "GET: /users/{id}/departments/{id}"
+      - "GET: /department/{id}/user/{id}"
+    answer: 2
+  - content: > 
+    设计一个URL，获取成绩排名前10的学员，以下设计符合Restful协议的是
+    options:
+      - "GET: /students?sortby=score&limit=10"
+      - "GET: /students/score?limit=10"
+      - "GET: /student?sortby=score&limit=10"
+      - "GET: /students/limit/10?sortby=score"
+    answer: 1
