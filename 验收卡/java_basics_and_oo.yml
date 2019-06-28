@@ -211,7 +211,7 @@ quiz:
       - "for (Student student : students) {}"
       - "while (students.iterator().hasNext()) {}"
       - "students.forEach(student -> {})"
-    answer: 1 2 3 4
+    answer: 1,2,3,4
   - content: >
       ```
       public class Student {
@@ -243,7 +243,7 @@ quiz:
       - "可以用该方法实现students的年龄从小到大排序：students.stream().sorted(Comparator.comparingInt(Student::getAge))"
       - "可以用该方法获得所有学生年龄的平均数：students.stream().mapToInt(Student::getAge).average()"
       - "可以用该方法获得年龄大于20岁的学生集合：students.stream().filter(student -> student.getAge() > 20).collect(Collectors.toList())"
-    answer: 1 3 4
+    answer: 1,3,4
   - content: "对于观察者模式，你对其掌握的程度是:"
     options:
       - "没听说过"

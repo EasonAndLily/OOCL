@@ -1,0 +1,107 @@
+quiz:
+  - content: "在软件工程中，TDD指的是:"
+    options:
+      - "Test-Driven Development"
+      - "To Do Development"
+      - "Technical Data Digest"
+      - "Time Division Duplex"
+    answer: 1
+  - content: "TDD的含义是："
+    options:
+      - "先写程序后写测试的开发方法"
+      - "先写测试后写程序，即“测试先行”"
+      - "用单元测试的方法写测试"
+      - "不需要测试的开发"
+    answer: 2
+  - content: "请画出TDD的流程图，并提交："
+  - content: "下面属于TDD的优势的是："
+    options:
+      - "Much less debug time"
+      - "Code proven to meet requirements"
+      - "Near zero defects"
+      - "Shorter development cycles"
+    answer: 1,2,3,4
+  - content: "Intellij IDEA中给一个类创建其对应的测试类的快捷键是："
+    options:
+      - "ctrl/cmd + shift + t"
+      - "opt + shift + t"
+      - "ctrl/cmd + t"
+      - "opt + t"
+    answer: 1
+  - content: "Intellij IDEA中运行测试的快捷键是："
+    options:
+      - "ctrl/cmd + alt + r"
+      - "ctrl/cmd + r"
+      - "ctrl/cmd + d"
+      - "ctrl + r"
+    answer: 1
+  - content: "Intellij IDEA中运行已经执行过的测试的快捷键是："
+    options:
+      - "ctrl/cmd + alt + r"
+      - "ctrl/cmd + r"
+      - "ctrl/cmd + d"
+      - "ctrl + r"
+    answer: 4
+  - content: "关于junit测试的注解，如果需要一个方法是测试方法，需要下面那个注解："
+    options:
+      - "@Test"
+      - "@BeforeEach"
+      - "@BeforeAll"
+      - "@AfterAll"
+    answer: 1
+  - content: "关于junit测试的注解，如果需要一个方法在所有测试之前执行，需要下面那个注解："
+    options:
+      - "@Test"
+      - "@BeforeEach"
+      - "@BeforeAll"
+      - "@AfterAll"
+    answer: 3
+  - content: "关于junit测试的注解，如果需要一个方法在每个测试方法之前执行，需要下面那个注解："
+    options:
+      - "@Test"
+      - "@BeforeEach"
+      - "@BeforeAll"
+      - "@AfterAll"
+    answer: 2
+  - content: "以下对单元测试，不正确的说法是："
+    options:
+      - "单元测试的主要目的是针对编码过程中可能存在的各种错误"
+      - "单元测试一般是由程序开发人员完成的"
+      - "单元测试是一种不需要关注程序结构的测试"
+      - "单元测试属于白盒测试的一种"
+    answer: 3
+  - content: "对于测试程序的一些命名规则，以下说法正确的一项是："
+    options:
+      - "测试类的命名只要符合Java类的命名规则就可以了"
+      - "测试类的命名一般要求以Test打头，后接类名称，如：TestPerson"
+      - "测试类的命名一般要求以Test结尾，前接类名称，如：PersonTest"
+      - "测试类中的方法都是以testXxx（）形式出现"
+    answer: 3
+  - content: "对于测试类中方法的命名规则，以下说法不正确的一项是："
+    options:
+      - "测试方法名应当贴切表达测试的意图"
+      - "测试方法名必须符合Java方法命令规范"
+      - "测试方法名可以用should_return..when..的形式表达"
+      - "测试方法名越短越简洁越好，并且应当加以注释"
+    answer: 4
+  - content: "对于测试类中方法的命名规则，以下说法不正确的一项是："
+    options:
+      - "测试方法名应当贴切表达测试的意图"
+      - "测试方法名必须符合Java方法命令规范"
+      - "测试方法名可以用should_return..when..的形式表达"
+      - "测试方法名越短越简洁越好，并且应当加以注释"
+    answer: 4
+  - content: "关于测试金字塔，您对其掌握的程度是："
+    options:
+      - "没听说过"
+      - "听说过，但不是很清楚"
+      - "理解概念但没用过"
+      - "理解概念并在练习中使用过"
+    answer:
+  - content: "关于测试金字塔，下面说法正确的是："
+    options:
+      - "对于测试金字塔，越往上，运行越快"
+      - "对于测试金字塔，最底层的是运行越快的单元测试"
+      - "对于测试金字塔，应当写更多的集成测试"
+      - "对于测试金字塔，集成测试位于最底层，并且执行很快"
+    answer: 2
