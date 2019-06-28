@@ -244,10 +244,4 @@ quiz:
       - "可以用该方法获得所有学生年龄的平均数：students.stream().mapToInt(Student::getAge).average()"
       - "可以用该方法获得年龄大于20岁的学生集合：students.stream().filter(student -> student.getAge() > 20).collect(Collectors.toList())"
     answer: 1,3,4
-  - content: "对于观察者模式，你对其掌握的程度是:"
-    options:
-      - "没听说过"
-      - "听说过，但不是很清楚"
-      - "理解概念但没用过"
-      - "理解概念并在练习中使用过"
-    answer: 
+  - content: "请画出观察者模式的结构图,并提交" 
