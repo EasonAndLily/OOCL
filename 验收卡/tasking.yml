@@ -1,0 +1,441 @@
+quiz:
+  - content: "已知一个过程，输入是一个整数数组，每个数都大于0小于53；输出是一个字符串，该字符串均由英文字母组成。例如输入[1, 4, 27],输出'adA',请给过程选择一个合适的名字:"
+    options:
+      - "map"
+      - "translate"
+      - "select"
+      - "print"
+    answer: 2
+  - content: "下面关于任务列表的描述，正确的有"
+    options:
+      - "任务之间需要各自独立"
+      - "各自独立是指一个任务不能引用另外一个任务的结果"
+      - "一开始进行任务划分时就需要完全穷尽"
+      - "完全穷尽是指所有任务的输入输出必须都很明确"
+    answer: [1, 4]
+  - content: "现需要计算一串数字的正数之和，那么最合适的任务组合是:"
+    options:
+      - >
+        ```
+        求和函数
+        输入：
+          importArray: [Number]
+        输出
+          sum: Number
+        ```
+      - >
+        ```
+        筛选函数
+        输入：
+          importArray: [Number]
+        输出：
+          positiveNumberArray: [Number]
+        ```
+      - >
+        ```
+        求和函数
+        输入：
+          positiveNumberArray: [Number]
+        输出：
+          sum: Number 
+        ```
+      - >
+        ```
+        筛选函数
+        输入：
+          importArray: [Number]
+        输出：
+          sum: Number 
+        ```
+    answer: [1, 2]
+  - content: "下面关于任务列表的描述，正确的有"
+    options:
+      - "任务之间需要各自独立"
+      - "各自独立是指一个任务不能引用另外一个任务的结果"
+      - "一开始进行任务划分时就需要完全穷尽"
+      - "完全穷尽是指所有任务的输入输出必须都很明确"
+    answer: [1, 4]
+  - content: "现需要一个过程用来筛选出一串数字中的奇数，那么从测试的视角，以下描述最合适的是"
+    options:
+      - >
+        ```
+        筛选函数
+        输入：
+          importArray: [Number]
+        输出
+          oddNumberArray: [Number]
+        ```
+      - >
+        ```
+        筛选函数
+        输入：
+          importArray: [Number]
+        输出
+          oddNumberArray: [Number]
+        测试用例：
+          用例1: 
+            [1, 3]
+            ----
+            []
+          用例2：
+            [1, 2, 3, 4]
+            ----
+            [2, 4]
+        ```
+      - >
+        ```
+        筛选函数
+        输入：
+          importArray: [Number]
+        输出
+          oddNumberArray: [Number]
+        测试用例：
+          用例1: 
+            [2, 4]
+            ----
+            []
+          用例2: 
+            [1, 2, 3, 4]
+            ----
+            [1, 3]  
+        ```
+      - >
+        ```
+        筛选函数
+        输入：
+          importArray: [Number]
+        输出
+          oddNumberArray: [Number]
+        测试用例：
+          用例1: 
+            [1, 2, 3, 4]
+            ----
+            [1, 3]
+          用例2: 
+            [1, 3, 5]
+            ----
+            [1, 3, 5]
+        ```
+    answer: 3
+  - content: "请阅读以下需求完成后面的题目  
+      小学图书馆由于藏书量小，种类也不多，一直以来都是用记录册来手工记录图书馆的库存情况。为了给同学们提供更好的服务，学校决定扩建图书馆，并引入电子化管理。我们团队顺利拿下了这个项目。经过多次商讨，客户初步需求如下：  
+      每本书都有ISBN号，相同的书ISBN号相同。目前图书管理员已经将所有的ISBN号及对应的书名都记录了下来并生成了表格并命名为ISBNIndex，通过系统函数loadISBNIndex()可以拿到所有的内容。本系统目前只要支持录入图书功能即可，每本书上都有一个记录ISBN号的条形码，图书管理员会用条形码扫描器依次扫描图书，条形码扫描器每次扫描之后都会提供一个ISBN码给图书管理系统，由于图书量很小，每次扫描完条形码之后，需要将所有图书的ISBN号、书名、数量都显示在屏幕上，对于无库存的书则不显示，例如:" >
+      ```
+      ------------------------Library------------------------
+      ISBN                Book Name               Count
+      12345abcde12345     JavaScript                1
+      abcde12345abcde     Vue                       2
+      -------------------------------------------------------
+      ```
+      你阅读完题目后，创建了一个名为repository的表格并列出了以下任务：
+      ```
+      findBookInfoByISBN
+      addBookToRepository
+      loadRepository
+      printRepertory
+      ```
+  - content: "以下对任务findBookInfoByISBN的描述，正确的是:"
+    options:
+      - >
+        ```
+        findBookInfoByISBN
+        输入：
+          ISBN: string
+        输出：
+          bookInfo: {
+            ISBN: string,
+            name: string
+          }
+        ```
+      - >
+        ```
+        findBookInfoByISBN
+        输入：
+          ISBNIndex: [{ISBN: string, name: string}] 
+        输出：
+          bookInfo: {
+            ISBN: string,
+            name: string
+          }
+        ```
+      - >
+        ```
+        findBookInfoByISBN
+        输入：
+          ISBN: string
+          ISBNIndex: [{ISBN: string, name: string}] 
+        输出：
+          bookInfo: {
+            ISBN: string,
+            name: string,
+            count: number
+          }
+        ```
+      - >
+        ```
+        findBookInfoByISBN
+        输入：
+          ISBN: string
+          ISBNIndex: [{ISBN: string, name: string}] 
+        输出：
+          bookInfo: {
+            ISBN: string,
+            name: string
+          }
+        ```
+    answer: 4
+  - content: "你想从从测试的角度描述findBookInfoByISBN，那么最合适的测试用例组合有:"
+    options:
+      - >
+        ```
+        用例:
+          "123abc1234"
+          ----
+          {
+            ISBN: "123abc1234",
+            name: "JavaScript"
+          }
+        ```
+      - >
+        ```
+        用例:
+          "123abc1234"
+          [{
+            ISBN: "321123abdc",
+            name: "Java"
+          }]
+          ----
+          {}
+        ```
+      - >
+        ```
+        用例:
+          "321123abdc"
+          [{
+            ISBN: "123abd1234",
+            name: "JavaScript"
+          }]
+          ----
+          {}
+        ```
+      - >
+        ```
+        用例:
+          "123abc1234"
+          [{
+            ISBN: "123abd1234",
+            name: "JavaScript"
+          }, {
+            ISBN: "321123abdc",
+            name: "Java"
+          }]
+          ----
+          {
+            ISBN: "123abc1234",
+            name: "JavaScript"
+          }
+        ```
+    answer: [2, 4]
+  - content: "表格repository只能添加或删除记录，不能修改记录，那么对于任务'loadRepository'对应的任务图,最合适的是:"
+    options:
+      - ![loadRepositoryA](验收卡/image/tasking/loadRepository_A.png)
+      - ![loadRepositoryB](验收卡/image/tasking/loadRepository_B.png) 
+      - ![loadRepositoryC](验收卡/image/tasking/loadRepository_C.png) 
+      - ![loadRepositoryD](验收卡/image/tasking/loadRepository_D.png) 
+    answer: 1
+  - content: "以下对任务addBookToRepository的描述，正确的是:"
+    options:
+      - >
+        ```
+        addBookToRepository
+        输入：
+          ISBN: string
+        输出：
+          book: {
+            ISBN: string,
+            name: string
+          }
+        ```
+      - >
+        ```
+        addBookToRepository
+        输入：
+          ISBN: string
+        输出：
+          book: {
+            ISBN: string,
+            name: string,
+            count: number
+          }
+        ```
+      - >
+        ```
+        addBookToRepository
+        输入：
+          ISBN: string
+        输出：
+          book: {
+            ISBN: string
+          }
+        ```
+      - >
+        ```
+        addBookToRepository
+        输入：
+          ISBN: string
+        输出：
+          book: {
+            name: string
+          }
+        ```
+    answer: 3
+  - content: "用given when then来描述任务'addBookToRepository',下列描述最合适的是:"
+    options:
+      - >
+        * Given 书号为1234567890的图书，书名为《Refactor》
+        * When 当图书管理员扫完书号为1234567890的书后
+        * Then 表格Repository中可以找到一条书名为《Refactor》的记录
+      - >
+        * Given 图书管理员安装并启动了图书管理系统
+        * When 当图书管理员扫完书号为1234567890的书后
+        * Then 表格Repository中可以找到一条书号为1234567890的记录
+      - >
+        * Given 书号为1234567890的图书，书名为《Refactor》
+        * When 当图书管理员第一次扫完书号为1234567890的书后
+        * Then 表格Repository中可以找到一条书号为1234567890的记录
+      - >
+        * Given 书号为1234567890的图书，书名为《Refactor》
+          and 表格Repository是空的
+        * When 当图书管理员扫完书号为1234567890的书后
+        * Then 表格Repository中会多一条书号为1234567890的记录
+    answer: 4
+  - content: "以下针对任务'findBookInfoByISBN'的测试代码，最合适的是:" 
+    options:
+      - >
+        ```
+        it('should return the book information that the name is Refactor when the ISBN code is 1234567890' => {
+            //suppose loadISBNIndex() will return the following array
+            const ISBN_INDEX = [{code:'1234567890', name:'Refactor'}];
+
+            const code = '1234567890';
+            const bookInformation = findInformationByISBN(code);
+
+            expect(bookInformation.name).toBe('Refactor');
+        })
+        ```
+      - >
+        ```
+        it('should return the book information that the name is Refactor when the ISBN code is 1234567890' => {
+            //suppose loadISBNIndex() will return the following array
+            const ISBN_INDEX = [{code:'1234567890', name:'Refactor'},{code:'1111111111', name:'Refactor-2'}];
+
+            const code = '1234567890';
+            const bookInformation = findInformationByISBN(code);
+
+            expect(bookInformation.name).toBe('Refactor');
+        })
+        ```
+      - >
+        ```
+        it('should return the book information that the name is Refactor when the ISBN code is 1234567890' => {
+            //suppose loadISBNIndex() will return the following array
+            const ISBN_INDEX = [{code:'1234567890', name:'Refactor'},{code:'1111111111', name:'Refactor-2'}];
+
+            const code = '1234567890';
+            const bookInformation = findInformationByISBN(code);
+
+            expect(bookInformation).toBe('Refactor');
+        })
+        ```
+      - >
+        ```
+        it('should return the book information that the name is Refactor when the ISBN code is 1234567890' => {
+            //suppose loadISBNIndex() will return the following array
+            const ISBN_INDEX = [{code:'1234567890', name:'Refactor'},{code:'1111111111', name:'Refactor-2'}];
+
+            const code = '1234567890';
+            const bookInformation = main(code);
+
+            expect(bookInformation).toBe(`
+        ------------------------Library------------------------
+        ISBN                Book Name               Count
+        1234567890          JavaScript                1
+        -------------------------------------------------------
+            `);
+        })
+        ```
+    answer: 2
+  - content: "任务printRepertory正确的任务图是："
+    options:
+      - ![printRepositoryA](验收卡/image/tasking/printPepertory_A.png)
+      - ![printRepositoryB](验收卡/image/tasking/printPepertory_B.png)
+      - ![printRepositoryC](验收卡/image/tasking/printPepertory_C.png)
+      - ![printRepositoryD](验收卡/image/tasking/printPepertory_D.png)
+    answer: 2
+  - content: "当你分析完所有任务之后发现，printRepertory的负担太重了，所以你又新拆出来了一个任务，该任务对应的任务图是"
+    options:
+      - ![coverToBookInfoA](验收卡/image/tasking/coverToBookInfo_A.png)
+      - ![coverToBookInfoB](验收卡/image/tasking/coverToBookInfo_B.png)
+      - ![coverToBookInfoC](验收卡/image/tasking/coverToBookInfo_C.png)
+      - ![coverToBookInfoD](验收卡/image/tasking/coverToBookInfo_D.png)
+    answer: 3
+  - content: "修改之后的printRepertory对应的任务图是"
+    options:
+      - ![loadRepository2A](验收卡/image/tasking/printRepertory2_A.png)
+      - ![loadRepository2B](验收卡/image/tasking/loadRepository_B.png) 
+      - ![loadRepository2C](验收卡/image/tasking/loadRepository_C.png) 
+      - ![loadRepository2D](验收卡/image/tasking/loadRepository_D.png) 
+    answer: 2
+
+
+
+  - content: 关于如何做tasking，你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于列tasking时的完全独立原则,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于tasking的完全穷尽原则,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于任务图,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于按测试描述任务,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于Given When Then,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: "因为你详尽的任务图，团队很快就将图书馆管理系统的第一期功能实现并交付给了学校。学校对你们的工作成果非常满意，决定继续与你们合作完成第二期功能的开发。其需求描述如下： 
+  图书馆系统需要支持借阅功能。学生选好书籍后，会将图书交给图书管理员，图书管理员切换到借书界面后，会用扫描器依次扫描图书的条形码，而扫描器会将条形码转为ISBN号并提供给我们的系统。按照前十年的手动管理经验，学生有借必还，从未出现过书籍丢失情况。所以不需要记录书到底是被哪些学生借走了。当图书被借走后，对应的图书库存量应该减少，屏幕上也要按第一期功能中的方式显示图书库存情况。请你为这期功能设计任务列表，请用任务图的形式表现出来。" 
