@@ -1,0 +1,515 @@
+# vue router的使用
+
+quiz:
+  - content: >
+      在子组件中获取```store```对象，下面哪一项是正确的 
+    options:
+      - "this.store"
+      - "store"
+      - "this.$store"
+      - "this.store()"
+    answer: 3
+  - content: >
+      对```getter```描述不正确的是
+    options:
+      - "getter返回值会根据它的依赖被缓存起来"
+      - "getter只能返回一个对象值"
+      - "只有getter的依赖变化时，才会重新调用其函数计算"
+      - "mapGetters函数可以将store中的getter映射至局部计算属性"
+    answer: 2 
+  - content: >
+      已知Store中state结构如下
+      ```
+      state: {
+        count: 0
+      }
+      ```
+      那么```Counter```组件中绑定Store中```count```，下面代码正确的是:
+      1. ```
+          const Counter = {
+            template: `<div>{{ count }}</div>`,
+            computed: {
+              count () {
+                return this.$store.state.count
+              }
+            }
+          }
+
+         ```
+      2. ```
+          const Counter = {
+            template: `<div>{{ count }}</div>`,
+            computed: mapState([
+              'count'
+            ])
+          }
+        ```
+      3. ```
+          const Counter = {
+            template: `<div>{{ count }}</div>`,
+            computed: ...mapState([
+              'count'
+            ])
+          }
+        ```
+      4. ```
+          const Counter = {
+            template: `<div>{{ count }}</div>`,
+            computed: mapState({
+              count: state => state.count,
+            })
+          }
+        ```
+    options: 
+      - "1,2" 
+      - "1,3" 
+      - "1,3,4" 
+      - "1,2,4" 
+    answer: 4
+  - content: >
+      已知Store的结构为
+      ```
+      const store = new Vuex.Store({
+        state: {
+          users: [
+            { id: 1, name: 'zhangsan', age: 14 },
+            { id: 2, name: 'lisi', age: 20 }
+          ]
+        },
+      })
+      ```
+      请选择以下哪一项是正确定义getter属性来过滤出users中年龄大于18的数据
+      1. ```
+          getters: {
+            filterUsersByGreaterThen18Age: state => {
+              return state.users.filter(user => user.age > 18)
+            }
+          }
+         ```
+      2. ```
+          getters: {
+            filterUsersByGreaterThen18Age: ({ state }) => {
+              return state.users.filter(user => user.age > 18)
+            }
+          }
+         ```
+      3. ```
+          getters: {
+            filterUsersByGreaterThen18Age: (store) => {
+              return store.state.users.filter(user => user.age > 18)
+            }
+          }
+         ```
+    options:
+      - "1"
+      - "2"
+      - "3"
+    answer: 1
+  - content: >
+      已知Store结构如下
+      ```
+        const store = new Vuex.Store({
+          state: {
+            color: 'red' 
+          },
+        })
+      ```
+      请判断以下哪一项正确定义函数来改变```state.color```的值
+      1. ```
+          mutations: {
+            changeColor(state, color) {
+              state.color = color 
+            }
+          }
+         ```
+      2. ```
+          mutations: {
+            changeColor({state, color}) {
+              state.color = color 
+            }
+          }
+         ```
+      3. ```
+          mutations: {
+            changeColor(store, color) {
+              store.state.color = color 
+            }
+          }
+         ```
+      4. ```
+          mutations: {
+            changeColor(store, color) {
+              api.callAsyncMethod((color) => {
+                state.color = color 
+              })
+            }
+          }
+         ```
+    options:
+      - "1"
+      - "2"
+      - "3"
+    answer: 1
+  - content: >
+      已知Store中存在一个Mutation函数```updateUser```，来改变```state```中的user对象属性，
+      请选择以下正确的触发```updateUser```方式
+    options:
+      - "store.commit('updateUser', user)"
+      - "store.commit({ type: 'increment, payload: user })"
+      - "store.commit('increment', { payload: user })"
+      - "store.commit({ type: 'increment' }, user)"
+    answer: 1,2
+  - content: >
+      已知Store的mutations中存在```addAgeToUser```函数
+      ```
+        state: {
+          user: {
+            name: 'zhangsan'
+          }
+        },
+        mutations: {
+          addAgeToUser(state, age) {
+            // todo implement
+          }
+        }
+      ```
+      在组件绑定了```state.user```, 如果调用```$store.commit('addAgeToUser', 14)来为```user```对象增加新属性,
+      那么```addAgeToUser```函数应该如何写代码实现，能够让组件更新name显示
+    options:
+      - "state.user = { ...state.user, age }"
+      - "state.user.age = age"
+      - "Vue.set(user, 'age', age)"
+      - "Object.assign(state.user, { age });"
+    answer: 1,3
+  - content: >
+      对于Vuex中Action描述正确的是
+    options:
+      - "Action支持包含异步操作"
+      - "Action函数内可以直接变更State的状态"
+      - "Action函数内可以执行多个Mutation函数"
+      - "Action函数返回值支持Promise类型"
+    answer: 1,3,4
+  - content: >
+      已知Store的结构如下
+      ```
+      const moduleA = {
+        state: { 
+          count: 2,
+        },
+        getters: {
+          computeSum(state, getters, rootState) {
+            return state.count + rootState.sum;
+          }
+        }
+      }
+
+      const store = new Vuex.Store({
+        state: {
+          count: 10,
+        }
+        modules: {
+          a: moduleA,
+        }
+      })
+
+      ```
+      在moduleA定义一个getter函数返回值为父节点和本节点count的总和
+      1. ```
+        getters: {
+          computeSum(state) {
+            return state.count + state.parent.count;
+          }
+        }
+         ```
+      2. ```
+        getters: {
+          computeSum(state, getters, rootState) {
+            return state.count + rootState.count;
+          }
+        }
+         ```
+      3. ```
+        getters: {
+          computeSum(rootState) {
+            return rootState.a.count + rootState.count;
+          }
+        }
+         ```
+      以上哪一项代码满足需求
+    options:
+      - "1"
+      - "2"
+      - "3"
+    answer: 2  
+  - content: >
+      已知store结构如下
+      ```
+      const store = new Vuex.Store({
+        modules: {
+          account: {
+            namespaced: true,
+            mutations: {
+              login () { ... }
+            },
+          }
+        }
+      });
+      ```
+      以下选项中可以正确触发login函数的是
+    options:
+      - "$store.commit('login')"
+      - "$store.commit('/account/login')"
+      - "$store.commit({ root: 'account', current: 'login' })"
+      - "$store.commit('account/login')"
+    answer: 4
+  - content: >
+      已知在组件中获取到$route.params的值为
+      ```
+      {
+        companyName: 'Xiaomi',
+        id: 1,
+      }
+      ```
+      那么此组件的动态路由路径应该怎么设计才合理
+    options:
+      - "/company/employee/:companyName/:id"
+      - "/company/employee?companyName=?&id=?"
+      - "/company/:companyName/employee/:id"
+    answer: 3
+  - content: >
+      已知需求如下
+       > 当用户打开个人信息页面(UserComponent), 页面存在两个tab,tab的内容分别是 
+       基本信息(UserProfileComponent)和信用记录(CreditHistoryComponent)
+      请设计正确的路由结构
+      1. ```
+          const router = new VueRouter({
+            routes: [
+              { path: '/user/:id', component: UserComponent,
+                components: [
+                  UserProfileComponent,
+                  CreditHistoryComponent,
+                ]
+              }
+            ]
+          })
+         ```
+      2. ```
+          const router = new VueRouter({
+            routes: [
+              { path: '/user/:id', component: UserComponent },
+              { path: '/user/:id/profile', component: UserProfileComponent },
+              { path: '/user/:id/credit-history', component: CreditHistoryComponent },
+            ]
+          })
+         ```
+      3. ```
+          const router = new VueRouter({
+            routes: [
+              { path: '/user/:id', component: UserComponent,
+                children: [
+                  {
+                    path: 'profile',
+                    component: UserProfileComponent
+                  },
+                  {
+                    path: 'credit-history',
+                    component: CreditHistoryComponent
+                  }
+                ]
+              }
+            ]
+          })
+         ```
+    options:
+      - "1"
+      - "2"
+      - "3"
+      - "1,3"
+    answer: 3
+  - content: >
+      已知路由如下
+      ```
+      const router = new VueRouter({
+        routes: [
+          { path: '/', component: ProductList },
+          { path: '/product/:id', component: ProductDetail, name: 'product-detail' },
+        ]
+      })
+      ```
+      用户从List页面点击某一个产品，跳转至产品详情页面，应该使用以下哪一项方法
+    options:
+      - "router.replace({ name: 'product-detail', params: { id }})"
+      - "router.push({ name: 'product-detail', query: { id }})"
+      - "router.push({ name: 'product-detail', params: { id }})"
+      - "router.push({ path: '/product', params: { id }})"
+    answer: 3
+  - content: >
+      当用户离开特定页面，需要弹出确认框提示用户，那么应该使用以下哪一个导航守卫
+    options:
+      - "beforeRouteEnter"
+      - "beforeRouteUpdate"
+      - "beforeRouteLeave"
+      - "router.beforeEach"
+    answer: 3
+  - content: >
+      ```
+      <router-view></router-view>
+      <router-view name="second"></router-view>
+      <router-view name="third"></router-view>
+      ```
+      以上是某组件的布局，它存在三个router视图,那么路由应该怎么定义
+      1. ```
+          const router = new VueRouter({
+            routes: [
+              {
+                path: '/',
+                children: [
+                  { path: '/', component: Foo },
+                  { path: '/first', component: Bar },
+                  { path: '/second', component: Baz },
+                ]
+              }
+            ]
+          })
+         ```
+      2. ```
+          const router = new VueRouter({
+            routes: [
+              {
+                path: '/',
+                components: {
+                  default: Foo,
+                  a: Bar,
+                  b: Baz
+                }
+              }
+            ]
+          })
+         ```
+      3. ```
+          const router = new VueRouter({
+            routes: [
+              { path: '/', component: Foo },
+              { path: '/first', component: Bar },
+              { path: '/second', component: Baz },
+            ]
+          })
+         ```
+    options:
+      - "1"
+      - "2"
+      - "3"
+      - "1,2"
+    answer: 2
+  - content: >
+      ```
+      <a-row>
+        <a-col><p class="height-100">col-4</p></a-col>
+        <a-col><p class="height-50">col-4</p></a-col>
+        <a-col><p class="height-120">col-4</p></a-col>
+        <a-col><p class="height-80">col-4</p></a-col>
+      </a-row>
+      ```
+      以上是基于vue-ant-desgin的栅格布局，4个子元素排列需求
+        - 每个元素周围分配相同的空间
+        - 垂直居中
+      以下选项中对```a-row```正确的配置是
+    options:
+      - "justify='space-around' align='middle'"
+      - "type='flex' justify='space-between' align='middle'"
+      - "type='flex' justify='space-around' align='center'"
+      - "type='flex' justify='space-around' align='middle'"
+    answer: 3
+  - content: >
+      ```
+        <a-row>
+          <a-col><p class="height-100">col-4</p></a-col>
+          <a-col><p class="height-50">col-4</p></a-col>
+        </a-row>
+      ```
+      要求子元素平分父元素空间, 应该对两个```a-col```元素如何配置
+    options:
+      - "都添加属性 :span='8'"
+      - "都添加属性 :span='12'"
+      - "都添加属性 :span='9'"
+      - "都添加属性 :span='6'"
+    answer: 2
+  - content: >
+      你对Vuex的Mutation掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      你对Vuex的Action掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      你对Vuex的Getter掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      你对Vue-router的路由配置掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      你对Vue-router的动态路由参数掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      你对Vue-Ant-Desgin的栅格布局掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      你对Vue-Ant-Desgin的```<a-list>```掌握的程度是
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: >
+      绘制Vuex概念图, 其中提供相关概念如下
+        - State
+        - Mutations
+        - Getters
+        - Actions
+        - Modules
+        - 辅助函数
+        - 局部状态
+        - 命名空间
+        - store实例($store)
+      
+
+    
+
+  
