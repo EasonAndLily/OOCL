@@ -60,7 +60,7 @@ quiz:
       - "在子类构造方法中使用super()显示调用父类的构造方法，super()必须写在子类构造方法的第一行，否则编译不通过"
       - "super()和this()不一定要放在构造方法内第一行"
       - "this()和super()可以同时出现在一个构造函数中"
-      - " this()和super()可以在static环境中使用，包括static方法和static语句块"
+      - "this()和super()可以在static环境中使用，包括static方法和static语句块"
     answer: 1
   - content: "多态的表现形式有:"
     options:
@@ -132,13 +132,50 @@ quiz:
       - "gradle"
       - "webpack"
     answer: 4
-  - content: "下列Gradle命令中，属于清理构建物的命令是:"
+  - content: "在软件构建过程中，如果想要清理上次构建的内容或者构建的中间物，需要用到下面那个命令："
     options:
       - "./gradlew clean"
       - "./gradlew build"
       - "./gradlew test"
       - "./gradlew -v"
     answer: 1
+  - content: >
+      ```
+      public class Person {
+          private String name;
+          private int age;
+          private String job;
+          public Person(String name, int age) {
+              this.name = name;
+              this.age = age;
+          }
+          public String getName() {
+              return name;
+          }
+          public void setName(String name) {
+              this.name = name;
+          }
+          public int getAge() {
+              return age;
+          }
+          public void setAge(int age) {
+              this.age = age;
+          }
+          public String introduce() {
+              return "My name is " + this.name + ". I am " + this.age + " years old.";
+          }
+          public String introduce(String job) {
+              return "My name is " + this.name + ". I am " + this.age + " years old. I am a " + job;
+          }
+      }
+      ```
+      对于两个方法introduce，他们之间的关系是：
+    options:
+      - "重构"
+      - "重写"
+      - "重载"
+      - "重做"
+    answer: 3
   - content: >
       ```
       public static void main(String[] args) {
@@ -244,4 +281,58 @@ quiz:
       - "可以用该方法获得所有学生年龄的平均数：students.stream().mapToInt(Student::getAge).average()"
       - "可以用该方法获得年龄大于20岁的学生集合：students.stream().filter(student -> student.getAge() > 20).collect(Collectors.toList())"
     answer: 1,3,4
+  - content: "对于对象之间的关系：继承和多态，您对其掌握的程度是："
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+    answer:
+  - content: "对于gradle，您对其掌握的程度是："
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+    answer: 
+  - content: "对于接口，您对它的掌握程度是："
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+    answer:
+  - content: "对于Java 8 stream，您对它的掌握程度是："
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+    answer:
+  - content: "对于HashMap，您对它的掌握程度是："
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+    answer:
+  - content: "对于Java8 Option，您对它的掌握程度是："
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+    answer:
   - content: "请画出观察者模式的结构图,并提交" 
