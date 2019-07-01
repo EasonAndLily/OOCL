@@ -165,6 +165,57 @@ quiz:
       - "应当测试0的阶乘，抛出异常"
       - "应当测试负数，抛出异常"
     answer: 1,2,3,4
+  - content: >
+      ```
+      if (0 == retCode) {
+        sendMessage("A001", "Process Success", outResult);
+      } else {
+        sendMessage("A001", "Process Failure", outResult);
+      }
+      ```
+      上面代码，下面说法正确的是：
+    options:
+      - "该代码表意清楚，无懈可击"
+      - "可以用三元表达式来判断具体的message"
+      - "可以这样优化：sendMessage("A001", messageFromRetCode(retCode), outResult);"
+      - "该代码存在魔法数字"
+    answer: 2,3,4
+  - content: >
+      ```
+      public class Account {
+          public List<String> getPlans(String accountId) { 
+            //some implements
+          }
+      }
+      public class StockPlan {
+          private Account account;
+          public StockPlan(Account account) {
+              this.account = account;
+          }
+          public List<String> getPlans(String accountId)
+              //some implements
+              return account.getPlans(accountId);
+          }
+      }
+      ```
+      如果需要测试方法getPlans，下面说法正确的是：
+    options:
+      - "可以直接测试getPlans，不需要mock account对象"
+      - "在测试getPlans方法时，需要mock account的对象，但不需要mock getPlans方法"
+      - "在测试getPlans方法是，需要mock account对象，也需要mock getPlans方法"
+      - "用Mockito框架可以实现mock account对象"
+    answer: 3,4
+  - content: > 用TDD的方式来实现一个加法运算，会用到下面的步骤，正确的组合是：
+  1. 写一个测试，输入为两个参数，输出为两个数的和。
+  2. 运行该测试，发现测试失败。
+  3. 编写仅仅使得该测试成功的实现。
+  4. 写另外一个测试，输入为两个参数，输出为两个数的和，运行测试。
+    options:
+      - "1234"
+      - "4213"
+      - "2314"
+      - "3412"
+    answer: 1
 
   - content: "对于TDD，您对它的掌握程度是："
     options:
