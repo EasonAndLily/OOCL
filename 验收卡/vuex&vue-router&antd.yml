@@ -498,7 +498,7 @@ quiz:
       - 理解概念并在练习中使用过
       - 理解概念并在真实项目中合理使用
   - content: >
-      绘制Vuex概念图, 其中提供相关概念如下
+      绘制Vuex概念图, 提供相关概念如下
         - State
         - Mutations
         - Getters

@@ -282,4 +282,11 @@ quiz:
       - 理解概念并在练习中使用过
       - 理解概念并在真实项目中合理使用
  - content: > 
-      绘制Spring IOC的概念图  
+      绘制Spring IOC的概念图, 提供相关概念如下
+       - IoC容器
+       - JavaBean
+       - ApplictionContext
+       - BeanFactory
+       - 依赖注入
+       - Set注入
+       - 构造器注入

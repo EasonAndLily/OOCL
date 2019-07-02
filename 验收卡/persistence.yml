@@ -1,5 +1,27 @@
 quiz:
   - content: >
+      以下对JDBC的描述正确的是
+    optoins:
+      - "JDBC是一种规范，为了让各个数据库开发商为Java程序员提供标准的数据访问类和接口"
+      - "定义JDBC驱动需要实现java.sql.Driver接口"
+      - "执行完成SQL后，需要手动关闭连接，释放资源"
+    answer: 1,2,3
+  - content: >
+      以下对于ORM映射关系描述正确的是
+    options:
+      - "数据库（db） --> 类（class）"
+      - "记录（record，行数据）--> 对象（object）"
+      - "字段（field）--> 对象的属性（attribute）"
+    answer: 2,3
+  - content: >
+      ORM优点描述正确的是
+    options:
+      - "数据模型都在一个地方定义，更容易更新和维护，也利于重用代码"
+      - "ORM 有现成的工具，很多功能都可以自动完成"
+      - "它迫使你使用 MVC 架构，ORM 就是天然的 Model，最终使代码更清晰"
+      - "基于 ORM 的业务代码比较简单，代码量少，语义性好，容易理解"
+    answer: 1,2,3,4
+  - content: >
       SpringBoot中在application.yml配置spring.jpa.hibernate.ddl-auto的不同值说法正确的
     options:
       - "validate：加载hibernate时，验证创建数据库表结构"

@@ -59,14 +59,6 @@ quiz:
       - "设计PATCH是对PUT的补充"
     answer: 4
   - content: > 
-      基于Restful规范, 对PATCH描述不正确的是 
-    options:
-      - "PATCH不是幂等的"
-      - "PATCH返回更新的部分属性"
-      - "PATCH用于更新资源"
-      - "PATCH设计用于完全代替PUT"
-    answer: 4
-  - content: > 
       设计一个URL，更新指定用户的昵称，以下设计符合Restful协议的是
     options:
       - "POST: /users/{id}"
@@ -103,7 +95,7 @@ quiz:
       - "@Autowired"
     answer: 1,2
   - content: >
-      @SpringBootTest注解的webEnvironment属性设置什么值会启动真实的Servlet环境
+      @SpringBootTest注解的webEnvironment属性如何设置可以指定内置容器的启动端口
     options:
       - "WebEnvironment.MOCK"
       - "WebEnvironment.RANDOM_PORT"
@@ -223,5 +215,13 @@ quiz:
       - 理解概念并在练习中使用过
       - 理解概念并在真实项目中合理使用
   - content: >
-      请绘制Restful的概念图
+      请绘制Restful的概念图, 提供相关概念如下
+        - HTTP动词
+        - HTTP状态码
+        - URI
+        - 域名
+        - 协议
+        - 版本
+        - 路径
+        - 过滤信息
   
