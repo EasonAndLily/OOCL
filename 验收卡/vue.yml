@@ -1,122 +1,96 @@
 quiz:
-  - content: >
+  - content: 以下代码的输出为 >
       ```
-
-      <template>
-        <div id="app">
-          <div v-for="item in items" :key="item">{{ item }}</div>
-        </div>
-      </template>
-      <script>
-      export default {
-        name: "app",
-        data() {
-            return {
-                items: ["A", "B", "C"]
+      //html = '<span>Hello world</span>'
+      <p> Message: {{html}} </p>
+      ```
+    options:
+      - "Message: Hello world"
+      - "Message: html"
+      - "Message: '<span>Hello world</span>'"
+      - "Message: <span>Hello world</span>"
+    answer: 4
+  - content: >
+      以下能正确解析的模版有:
+    options:
+      - "<span> {{count = 1; count++}} </span>"
+      - "<span> {{[1,2,3].filter(i => i > 1)}}</span>"
+      - "<span> {{ 'hello world'}}</span>"
+      - "<span> {{(i) => 1 + i}</span>"
+    answer: [2, 3]
+  - content: 以下关于计算属性的描述，正确的是
+    options:
+      - "计算属性就是一个方法，使用时也应当作方法使用"
+      - "计算属性会在其依赖的量发生变化时重新计算属性值"
+      - "计算属性不能设置setter"
+      - "在使用计算属性的地方，我们可以通过调用合适的方法来得到同样的返回值"
+    answer: [2, 4]
+  - content: >
+      下列计算属性的定义，正确的是
+    options:
+      - >
+        ```
+        var vm = new Vue({
+          el: '#root',
+          computed: {
+            name: 'Vue'
+          }
+        })
+        ```
+      - >
+        ```
+        var vm = new Vue({
+          el: '#root',
+          computed: {
+            name: ()  => 'Vue'
+          }
+        })
+        ```
+      - >
+        ```
+        var vm = new Vue({
+          el: '#root',
+          data: {
+            firstName: 'first',
+            lastName: 'last'
+          }
+          computed: {
+            name: function() {
+              return this.firstName + lastName;
             }
-        },
-      };
-      </script>
-
-      ```
-      在console面板执行``` $vm.items[1] = 'x' ```， 界面渲染的字符为
+          }
+        })
+        ```
+      - >
+        ```
+        var vm = new Vue({
+          el: '#root',
+          data: {
+            firstName: 'first',
+            lastName: 'last'
+          }
+          computed: {
+            name: this.firstName + lastName;
+          }
+        })
+        ```
+    answer: [2, 3] 
+  - content: >
+      以下对props描述正确的是
     options:
-      - "ABC"
-      - "AxC"
-      - "AXC"
-      - "不显示"
+      - "props可用于组件之间传递参数"
+      - "props可以指定各个prop的类型"
+      - "props可以用来传递函数"
+      - "子组件可以通过更新props来影响父组件"
+    answer: [1, 2, 3]
+  - content: >
+      下面选项正确定义```name``` 属性的是？
+    options:
+      - "props:['name']"
+      - "props: ('name')"
+      - "props: () => ['name']"
+      - "props: { name }"
     answer: 1
-  - content: >
-      以下哪一项不能触界面重新渲染
-    options:
-      - "$vm.items.splice(1, 1, 'X')"
-      - "$vm.$set($vm.items, 1, 'X')"
-      - "$vm.items.push('X')"
-      - "$vm.items.length = 4"
-    answer: 4
-  - content: >
-      ```
-
-      var vm = new Vue({
-        el: '#example',
-        data: {
-          message: 'Hello'
-        },
-        computed: {
-          newMessage: function () {
-            return this.message + "World";
-          }
-        }
-      })
-      ```
-      ```
-      <div id="example">
-        <p>{{ newMessage }}</p>
-      </div>
-      ```
-      以上代码浏览器上将显示的文字是？
-    options:
-      - "Hello"
-      - "World"
-      - "Hello World"
-      - "HelloWorld"
-    answer: 4
-  - content: >
-      ```
-
-      <template>
-        <div id="app">
-          <div>first time: {{ now }}</div>
-          <div>second time: {{ now }}</div>
-        </div>
-      </template>
-      <script>
-      export default {
-        name: "app",
-        computed: {
-          now() {
-            return Date.now();
-          }
-        }
-      };
-      </script>
-      ```
-      以上first time和second time显示的时间是否一致？
-    options:
-      - "相同"
-      - "不相同"
-    answer: 1 
-  - content: >
-      以下对```v-show```描述错误的是？
-    options:
-      - "v-show 总是会渲染元素"
-      - "v-show 只是对元素CSS display属性的切换"
-      - "v-show 初始开销低于 v-if"
-      - "v-show 不支持<template>元素"
-    answer: 3
-  - content: >
-      ```
-
-      <div v-if="type === 'A'">
-        A
-      </div>
-      <div v-else-if="type === 'B'">
-        B
-      </div>
-      <div v-else-if="type === 'C'">
-        C
-      </div>
-      <div v-else>
-        Don't Down
-      </div>
-      ```
-      当 type === 'D' 时应该显示什么？ 
-    options:
-      - "A"
-      - "B"
-      - "C"
-      - "Don't Down"
-    answer: 4
   - content: >
       以下哪一项不是事件修饰符？
     options:
@@ -126,153 +100,216 @@ quiz:
       - ".once"
     answer: 3
   - content: >
-      以下哪一项不是Vue按键码别名？
+      以下关于事件的说法，正确的有：
     options:
-      - ".enter"
-      - ".add"
-      - ".tab"
-      - ".delete"
+      - "当自定义事件名为someEvent时，在模版中绑定方式应为：v-on:some-event="doSomething""
+      - "事件修饰符.stop的作用是：所修饰的事件只响应一次"
+      - "每个事件只能有一个修饰符"
+      - "事件修饰符.capture的作用是：添加事件侦听器时使用事件捕获模式"
     answer: 2
   - content: >
-      以下哪一项不是系统修饰键？
+      下列多slot元素的描述，正确的有：
     options:
-      - ".ctrl"
-      - ".alt"
-      - ".meta"
-      - ".fn"
-    answer: 4
-  - content: >
-      以下哪一项不是鼠标按钮修饰符？
-    options:
-      - ".left"
-      - ".right"
-      - ".middle"
-      - ".scroll"
-    answer: 4
-  - content: >
-      下面选项正确定义```count``` 属性的是？
-    options:
-      - "props:['count']"
-      - "props: ('count')"
-      - "props: () => ['count']"
-      - "props: { count }"
-    answer: 1
-  - content: >
-      在vue组件中，传递props写法正确的是?
-    options:
-      - "v-on:count='1'"
-      - "@count='1'"
-      - "v-bind:count='1'"
-      - "&count='1'"
-    answer: 3
-  - content: >
-      以下哪一项不是vue props的类型？
-    options:
-      - "number"
-      - "String"
-      - "Function"
-      - "Promise"
-    answer: 1
-  - content: >
+      - "组件在调用时，起始标签和结束标签之间的内容会替换掉slot元素"
+      - "当组件里有多个slot元素时，会重复显示组件标签之间的内容"
+      - "插槽的作用域和组件的作用域一致"
+      - "可以给slot元素设置默认值"
+    answer: [1, 4]
+  - content: 对下列代码描述正确的是 >
       ```
-      Vue.component('blog-post', {
-        props: ['userName'],
-        template: '<h3>{{ userName }}</h3>'
+      //Js file
+      Vue.component('your-component', {
+        props: ['name'],
+        template: "<span> <slot>please input your name</slot> </span>"
       })
+      
       ```
-      以下选项中为```blog-post```组件 ```userName```属于传值写法正确的是？
     options:
-      - "<blog-post userName='hello'></blog-post>"
-      - "<blog-post user-name='hello'></blog-post>"
-      - "<blog-post username='hello'></blog-post>"
-      - "<blog-post UserName='hello'></blog-post>"
-    answer: 2
-  - content: >
+      - 渲染完以下代码后，可以在页面上看到：My name is Tom >
       ```
-
-      <template>
-        <div id="app">
-            <div v-bind:style="{ 'background-color': activeColor, width: '50px', height: '50px' }"></div>
-            </div>
-      </template>
-
-      <script>
-      export default {
-        name: "app",
-        data() {
-          return {
-            activeColor: "red",
-          }
-        },
-      };
-      </script>
-
+      <your-component name="Tom">
+        My name is {{name}}
+      </your-component>
       ```
-      以上代码 ```div```显示什么颜色？
+      - 渲染完以下代码后，可以在页面上看到：please input your name >
+      ```
+      <your-component name="Tom">
+      </your-component>
+      ```
+      - 渲染完以下代码后，可以在页面上看到：My name is Tom >
+      ```
+      <your-component>
+        My name is Tom 
+      </your-component>
+      ```
+      - 渲染完以下代码后，可以在页面上看到：please input your name >
+      ```
+      <your-component>
+        My name is Tom 
+      </your-component>
+      ```
+    answer: [2, 3]
+  - content: 以下描述正确的是 >
     options:
-      - "绿色"
-      - "红色"
-      - "不显示"
-    answer: 2
-  - content: >
-      ```
-
-      <template>
-        <div id="app">
-            <div v-bind:style="rectangleStyle"></div>
-            </div>
-      </template>
-
-      <script>
-      export default {
-        name: "app",
-        data() {
-          return {
-            rectangleStyle: {
-              'background-color': 'red'
-            },
-          }
-        },
-      };
-      </script>
-
-      ```
-      以上代码 ```div```显示什么颜色？
+      - 当按下enter键的同时，浏览器console窗口中会打印出‘hello world'>
+        ```
+        <input v-on:keyup.enter="console.log('hello world')">
+        ```
+      - 当同时完成输入alt + enter键时，浏览器console窗口中会打印出‘hello world'>
+        ```
+        <input v-on:click.enter="console.log('hello world')">
+        ```
+      - 当同时完成输入alt + enter键时，浏览器console窗口中会打印出‘hello world'>
+        ```
+        <input v-on:click.enter.exact="console.log('hello world')">
+        ```
+      - 当同时完成鼠标点击并输入enter时，浏览器console窗口中会打印出‘hello world'>
+        ```
+        <input v-on:click.enter.exact="console.log('hello world')">
+        ```
+    answer: 4
+  - content: 以下说法正确的是 >
     options:
-      - "绿色"
-      - "红色"
-      - "不显示"
+      - 当js文件中没有初始化name的值的时候，下列输入框会显示'Tom' >
+        ```
+        <input v-model="name" value="Tom">
+        ```
+      - 当在输入框中输入'hello'后，v-model的值不会发生变化 >
+        ```
+        <input v-model="name">
+        ```
+      - 初次渲染输入框时，输入框内会显示hello >
+        ```
+        <input v-model="'hello'">
+        ```
+      - 初次渲染输入框时，输入框内会显示hello >
+        ```
+        //suppose name = null
+        <input v-model="name" placeholder="hello">
+        ```
+    answer: 4
+  - content: 以下说法正确的是 >
+    options:
+      - 以下代码会给元素div添加一个class使div的color属性被设置成red >
+        ```
+        <div v-bind:class="{ color: red }"></div>
+        ```
+      - 以下代码无法正确的给元素div添加class >
+        ```
+        <div v-bind:class="['text-danger']"></div>
+        ```
+      - 以下代码渲染之后会在页面上显示红色的hello world >
+        ```
+        <div v-bind:style="{ color: `red` }">hello world</div>
+        ```
+      - 以下代码会将元素div中的字体大小设置为12px >
+        ```
+        <div v-bind:style="{ font-size: `12px` }">hello world</div>
+        ```
     answer: 3
   - content: >
-      下面javascript语法在模板语法无效的是？
+      下列关于自定义组件的说法，正确的是：
     options:
-      - "{{ number + 1 }}"
-      - "{{ size > 0 ? 'Big' : 'Small' }}"
-      - "{{ array.join(';') }}"
-      - "const count = 1"
+      - "组件可接受的选项和new Vue()的完全一致"
+      - 下列组件的声明是正确的 > 
+        ```
+        Vue.component('my-component-name', {
+          // ... otherOptions ...
+          data: {
+            count: 0
+          }
+        })
+        ```
+      - 下列组件的声明是正确的 > 
+        ```
+        Vue.component('my-component-name', {
+          // ... otherOptions ...
+          Vue.component('blog-post', {
+            props: ['title', 'subtitle'],
+            template: '<h3>{{ title }}</h3> <h3>{{ subtitle}}</h3>'
+          })}
+        })
+        ```
+      - 下列组件的声明是正确的 > 
+        ```
+        Vue.component('my-component-name', {
+          // ... otherOptions ...
+          data: () => {return  {name: ''};}
+        })
+        ```
     answer: 4
   - content: >
-      下面动态参数写法正确的是?
+      以下关于生命周期的说法，正确的是：
     options:
-      - "<a [attributeName]='url'>"
-      - "<a v-bind:['attribute' + Name  ]='url'>"
-      - "<a v-bind:['attributeName']='url'>"
-      - "<a v-bind:[attributeName]='url'>"
+      - "在beforeCreate时可以正确拿到props传进来的参数"
+      - "在destroyed时可以正确拿到props传进来的参数"
+      - "在mounted时，子component也已经完成了mounte"
+      - "在created时，事件的callback都已经设置好了"
     answer: 4
-  - content: >
-      以下哪一项不是vue模板语法的修饰符？
+  - content: 关于vue的模版语法,你了解多少
     options:
-      - ".count"
-      - ".lazy"
-      - ".trim"
-      - ".number"
-    answer: 1 
-  - content: >
-      下面哪一项的对应的缩写不正确?
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于组件的props,你了解多少
     options:
-      - "v-on:click => @click"
-      - "v-bind:todo => :todo"
-      - "v-on:click => :click"
-    answer: 3
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于组件的计算属性,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于v-model，你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于slot，你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于自定义事件,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
+  - content: 关于自定义组件,你了解多少
+    options:
+      - 没听说过
+      - 听说过，但不是很清楚
+      - 用过但并不理解概念
+      - 理解概念但没用过
+      - 理解概念并在练习中使用过
+      - 理解概念并在真实项目中合理使用
   - content: >
-      请绘制vue组件的生命周期流程图
+      请使用概念图及以下概念来描述：“如何构建一个自定义组件” >
+      * vue实例
+      * props 
+      * 计算属性
+      * data
+      * template
+      * 单个根元素
+      * 生命周期
+      * 插槽
+      * 事件
