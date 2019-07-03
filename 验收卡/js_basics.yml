@@ -285,13 +285,13 @@ quiz:
       - "[7, 1, 6]"
       - "[1, 6, 7]"
     answer: 4
-  - content: "以下方式可为对象objectA添加属性name的有:"
+  - content: "以下方式可为对象objectA正确添加属性name的有:"
     options:
       - "objectA.name = 'a';"
       - "objectA[name] = 'a';"
       - "objectA['name'] = 'a';"
-      - "objectA = {...objectA, name: 'a'};"
-    answer: [1, 3, 4]
+      - "objectA = {name: 'a'};"
+    answer: [1, 3]
   - content: "以下方式可可以获取objectA的所有属性的值的有:"
     options:
       - "objectA.map((key, value) => value);"
