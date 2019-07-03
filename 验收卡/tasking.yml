@@ -244,12 +244,16 @@ quiz:
       - "测试用例2， 测试用例3"
       - "测试用例1， 测试用例2"
     answer: 2
-  - content: "表格repository只能添加或删除记录，不能修改记录，那么对于任务'loadRepository'对应的任务图,最合适的是:"
+  - content: "表格repository只能添加或删除记录，不能修改记录，那么对于任务'loadRepository'对应的任务图,最合适的是:" > 
+      图A ![loadRepertoryA](image/tasking/loadRepertory_A.png)  
+      图B ![loadRepertoryB](image/tasking/loadRepertory_B.png)  
+      图C ![loadRepertoryC](image/tasking/loadRepertory_C.png)  
+      图D ![loadRepertoryD](image/tasking/loadRepertory_D.png)  
     options:
-      - ![loadRepositoryA](验收卡/image/tasking/loadRepository_A.png)
-      - ![loadRepositoryB](验收卡/image/tasking/loadRepository_B.png) 
-      - ![loadRepositoryC](验收卡/image/tasking/loadRepository_C.png) 
-      - ![loadRepositoryD](验收卡/image/tasking/loadRepository_D.png) 
+      - 图A
+      - 图B
+      - 图C
+      - 图D
     answer: 1
   - content: "以下对任务addBookToRepository的描述，正确的是:"
     options:
@@ -373,30 +377,39 @@ quiz:
         })
         ```
     answer: 2
-  - content: "任务printRepertory正确的任务图是："
+  - content: "任务printRepertory正确的任务图是：" >
+      图A ![printRepertoryA](image/tasking/printRepertory_A.png)  
+      图B ![printRepertoryB](image/tasking/printRepertory_B.png)  
+      图C ![printRepertoryC](image/tasking/printRepertory_C.png)  
+      图D ![printRepertoryD](image/tasking/printRepertory_D.png)  
     options:
-      - ![printRepositoryA](验收卡/image/tasking/printPepertory_A.png)
-      - ![printRepositoryB](验收卡/image/tasking/printPepertory_B.png)
-      - ![printRepositoryC](验收卡/image/tasking/printPepertory_C.png)
-      - ![printRepositoryD](验收卡/image/tasking/printPepertory_D.png)
+      - 图A
+      - 图B
+      - 图C
+      - 图D
     answer: 2
-  - content: "当你分析完所有任务之后发现，printRepertory的负担太重了，所以你又新拆出来了一个任务，该任务对应的任务图是"
+  - content: "当你分析完所有任务之后发现，printRepertory的负担太重了，所以你又新拆出来了一个任务，该任务对应的任务图是" >
+      图A ![coverToBookInfoA](image/tasking/coverToBookInfo_A.png)
+      图B ![coverToBookInfoB](image/tasking/coverToBookInfo_B.png)
+      图C ![coverToBookInfoC](image/tasking/coverToBookInfo_C.png)
+      图D ![coverToBookInfoD](image/tasking/coverToBookInfo_D.png)
     options:
-      - ![coverToBookInfoA](验收卡/image/tasking/coverToBookInfo_A.png)
-      - ![coverToBookInfoB](验收卡/image/tasking/coverToBookInfo_B.png)
-      - ![coverToBookInfoC](验收卡/image/tasking/coverToBookInfo_C.png)
-      - ![coverToBookInfoD](验收卡/image/tasking/coverToBookInfo_D.png)
+      - 图A
+      - 图B
+      - 图C
+      - 图D
     answer: 3
-  - content: "修改之后的printRepertory对应的任务图是"
+  - content: "修改之后的printRepertory对应的任务图是" >
+      图A ![loadRepertory2A](image/tasking/printRepertory2_A.png)
+      图B ![loadRepertory2B](image/tasking/loadRepertory_B.png) 
+      图C ![loadRepertory2C](image/tasking/loadRepertory_C.png) 
+      图D ![loadRepertory2D](image/tasking/loadRepertory_D.png) 
     options:
-      - ![loadRepository2A](验收卡/image/tasking/printRepertory2_A.png)
-      - ![loadRepository2B](验收卡/image/tasking/loadRepository_B.png) 
-      - ![loadRepository2C](验收卡/image/tasking/loadRepository_C.png) 
-      - ![loadRepository2D](验收卡/image/tasking/loadRepository_D.png) 
+      - 图A
+      - 图B
+      - 图C
+      - 图D
     answer: 2
-
-
-
   - content: 关于如何做tasking，你了解多少
     options:
       - 没听说过
