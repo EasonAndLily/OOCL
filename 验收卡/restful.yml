@@ -16,18 +16,11 @@ quiz:
       - "用户请求的格式不可得"
     answer: 1
   - content: > 
-      基于Restful规范, 对PUT描述不正确的是 
-    options:
-      - "PUT操作是幂等的"
-      - "PUT更新某一资源，则必须要更新资源的全部属性"
-      - "PUT创造新资源"
-      - "PUT请求返回改变的属性"
-    answer: 3,4
-  - content: > 
       ```
 
       GET /zoos/ID/animals
       ```
+
       以下对上述URI描述正确的是
     options:
       - "列出某个指定动物园的所有动物"
@@ -82,42 +75,6 @@ quiz:
       - "GET: /student?sortby=score&limit=10"
       - "GET: /students/limit/10?sortby=score"
     answer: 1
-  - content: > 
-      ```
-
-      public class TodoControllerTest {}
-      ```
-      以上是SpringBoot中 Controller的测试类需要使用哪些注解才能运行
-    options:
-      - "@RunWith"
-      - "@SpringBootTest"
-      - "@ComponentScan"
-      - "@Autowired"
-    answer: 1,2
-  - content: >
-      @SpringBootTest注解的webEnvironment属性如何设置可以指定内置容器的启动端口
-    options:
-      - "WebEnvironment.MOCK"
-      - "WebEnvironment.RANDOM_PORT"
-      - "WebEnvironment.DEFINED_PORT"
-      - "WebEnvironment.NONE"
-    answer: 2,3
-  - content: >
-      Mockito中@Mock和@MockBean的区别描述正确的是
-    options:
-      - "@MockBean是@Mock的替换者"
-      - "@MockBean标注的类实例会替换Spring容器中相同类型的实例, 而@Mock仅仅mock了一个类实例"
-      - "@Mock需要调用MockitoAnnotations.initMocks函数才能生成mock实例, 而@MockBean不需要"
-      - "@Mock和@MockBean都需要调用MockitoAnnotations.initMocks函数才能生成mock实例"
-    answer: 2,3
-  - content: >
-      以下哪几项Mockito无法支持mock
-    options:
-      - "final修饰的类"
-      - "匿名类"
-      - "接口"
-      - "原始类型"
-    answer: 1,2,4
   - content: 
       以下使用Mockito mock一个函数的返回值语法正确的是
     options:
@@ -126,8 +83,9 @@ quiz:
       - "do(categoryRepository.save(any())).thenReturn(null)"
       - "do(categoryRepository.save(any())).return(null)"
     answer: 1
-  - content:
+  - content: >
       ```
+
       @Test
       fun testMethodRunTimes() {
           mockList.add("one")
@@ -141,6 +99,7 @@ quiz:
           verify(mockList, times(1)).add("one")
       }
       ```
+
       以上测试是否能验证通过
     options:
       - "通过"
@@ -186,6 +145,22 @@ quiz:
       - "jsonPath(\"$.title\", Matchers.is(\"abc\"))" 
       - "jsonPath(\"&.title\", Matchers.is(\"abc\"))" 
     answer: 3
+  - content: >
+      @SpringBootTest注解的webEnvironment属性如何设置可以指定内置容器的启动端口
+    options:
+      - "WebEnvironment.MOCK"
+      - "WebEnvironment.RANDOM_PORT"
+      - "WebEnvironment.DEFINED_PORT"
+      - "WebEnvironment.NONE"
+    answer: 3
+  - content: >
+      以下哪几项Mockito无法支持mock
+    options:
+      - "final修饰的类"
+      - "匿名类"
+      - "接口"
+      - "原始类型"
+    answer: 1,2,4
   - content: >
       你对Restful Api了解多少
     options:

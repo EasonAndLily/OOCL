@@ -151,45 +151,6 @@ quiz:
       - "3"
     answer: 1
   - content: >
-      已知Store中存在一个Mutation函数```updateUser```，来改变```state```中的user对象属性，
-      请选择以下正确的触发```updateUser```方式
-    options:
-      - "store.commit('updateUser', user)"
-      - "store.commit({ type: 'increment, payload: user })"
-      - "store.commit('increment', { payload: user })"
-      - "store.commit({ type: 'increment' }, user)"
-    answer: 1,2
-  - content: >
-      已知Store的mutations中存在```addAgeToUser```函数
-      ```
-        state: {
-          user: {
-            name: 'zhangsan'
-          }
-        },
-        mutations: {
-          addAgeToUser(state, age) {
-            // todo implement
-          }
-        }
-      ```
-      在组件绑定了```state.user```, 如果调用```$store.commit('addAgeToUser', 14)来为```user```对象增加新属性,
-      那么```addAgeToUser```函数应该如何写代码实现，能够让组件更新name显示
-    options:
-      - "state.user = { ...state.user, age }"
-      - "state.user.age = age"
-      - "Vue.set(user, 'age', age)"
-      - "Object.assign(state.user, { age });"
-    answer: 1,3
-  - content: >
-      对于Vuex中Action描述正确的是
-    options:
-      - "Action支持包含异步操作"
-      - "Action函数内可以直接变更State的状态"
-      - "Action函数内可以执行多个Mutation函数"
-      - "Action函数返回值支持Promise类型"
-    answer: 1,3,4
-  - content: >
       已知Store的结构如下
       ```
       const moduleA = {
@@ -434,6 +395,45 @@ quiz:
       - "都添加属性 :span='9'"
       - "都添加属性 :span='6'"
     answer: 2
+  - content: >
+      已知Store中存在一个Mutation函数```updateUser```，来改变```state```中的user对象属性，
+      请选择以下正确的触发```updateUser```方式
+    options:
+      - "store.commit('updateUser', user)"
+      - "store.commit({ type: 'increment, payload: user })"
+      - "store.commit('increment', { payload: user })"
+      - "store.commit({ type: 'increment' }, user)"
+    answer: 1,2
+  - content: >
+      已知Store的mutations中存在```addAgeToUser```函数
+      ```
+        state: {
+          user: {
+            name: 'zhangsan'
+          }
+        },
+        mutations: {
+          addAgeToUser(state, age) {
+            // todo implement
+          }
+        }
+      ```
+      在组件绑定了```state.user```, 如果调用```$store.commit('addAgeToUser', 14)来为```user```对象增加新属性,
+      那么```addAgeToUser```函数应该如何写代码实现，能够让组件更新name显示
+    options:
+      - "state.user = { ...state.user, age }"
+      - "state.user.age = age"
+      - "Vue.set(user, 'age', age)"
+      - "Object.assign(state.user, { age });"
+    answer: 1,3
+  - content: >
+      对于Vuex中Action描述正确的是
+    options:
+      - "Action支持包含异步操作"
+      - "Action函数内可以直接变更State的状态"
+      - "Action函数内可以执行多个Mutation函数"
+      - "Action函数返回值支持Promise类型"
+    answer: 1,3,4
   - content: >
       你对Vuex的Mutation掌握的程度是
     options:

@@ -1,34 +1,4 @@
 quiz:
-  - content: >
-      以下对JDBC的描述正确的是
-    optoins:
-      - "JDBC是一种规范，为了让各个数据库开发商为Java程序员提供标准的数据访问类和接口"
-      - "定义JDBC驱动需要实现java.sql.Driver接口"
-      - "执行完成SQL后，需要手动关闭连接，释放资源"
-    answer: 1,2,3
-  - content: >
-      以下对于ORM映射关系描述正确的是
-    options:
-      - "数据库（db） --> 类（class）"
-      - "记录（record，行数据）--> 对象（object）"
-      - "字段（field）--> 对象的属性（attribute）"
-    answer: 2,3
-  - content: >
-      ORM优点描述正确的是
-    options:
-      - "数据模型都在一个地方定义，更容易更新和维护，也利于重用代码"
-      - "ORM 有现成的工具，很多功能都可以自动完成"
-      - "它迫使你使用 MVC 架构，ORM 就是天然的 Model，最终使代码更清晰"
-      - "基于 ORM 的业务代码比较简单，代码量少，语义性好，容易理解"
-    answer: 1,2,3,4
-  - content: >
-      SpringBoot中在application.yml配置spring.jpa.hibernate.ddl-auto的不同值说法正确的
-    options:
-      - "validate：加载hibernate时，验证创建数据库表结构"
-      - "create：每次加载hibernate，重新创建数据库表结构"
-      - "create-drop：加载hibernate时创建，退出时删除表结构"
-      - "update： 加载hibernate自动更新数据库结构"
-    answer: 1,2,3,4
   - content: > 
       以下哪些注解标记一个POJO类为JPA实体类
     options:
@@ -59,14 +29,6 @@ quiz:
       - "@Column(nullable = true, unique = false, length = 500)"
       - "@Column(length = 500) @Nonnull @Unique"
     answer: 1
-  - content: > 
-      对于实体类User(id , name, age), 哪些方法在JpaRepository中自动生成 
-    options:
-      - "findUserById"
-      - "findByIdAndName"
-      - "findById"
-      - "findName"
-    answer: 2, 3 
   - content: > 
       对于实体类Car（id，model，year），哪些JPA查询对于获取所有宝马汽车都有效？    
     options:
@@ -137,22 +99,7 @@ quiz:
       - "@Modifying"
       - "@Updated"
     answer: 3 
-  - content: >
-      使用Sort类， 以下哪一项是有效的排序
-    options:
-      - "new Sort(\"name\")"
-      - "new Sort(\"LENGTH(name)\")"
-      - "JpaSort.unsafe(\"LENGTH(name)\")"
-      - "new Sort(\"fn_len\")"
-    answer: 1,3,4
-  - content: >
-      Repository 查询函数支持的返回值类型有
-    options:
-      - "void"
-      - "List<T>"
-      - "Page<T>"
-      - "Integer"
-    answer: 1,2,3
+  
   - content: >
       ```
       @Entity
@@ -304,6 +251,22 @@ quiz:
       - "JoinColumn(name = \"id\", referencedColumnName=\"address_id\")"
       - "JoinColumn(referencedColumnName = \"id\", name=\"address_id\")"
     answer: 1
+  - content: >
+      使用Sort类， 以下哪一项是有效的排序
+    options:
+      - "new Sort(\"name\")"
+      - "new Sort(\"LENGTH(name)\")"
+      - "JpaSort.unsafe(\"LENGTH(name)\")"
+      - "new Sort(\"fn_len\")"
+    answer: 1,3,4
+  - content: >
+      Repository 查询函数支持的返回值类型有
+    options:
+      - "void"
+      - "List<T>"
+      - "Page<T>"
+      - "Integer"
+    answer: 1,2,3
   - content: >
       以下对Flyway描述正确的是：
     options:
