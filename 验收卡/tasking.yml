@@ -35,9 +35,9 @@ quiz:
         ```
         求和函数
         输入：
-          positiveNumberArray: [Number]
+          importArray: [Number]
         输出：
-          sum: Number 
+          sum: string
         ```
       - >
         ```
