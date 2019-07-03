@@ -1,7 +1,7 @@
 quiz:
   - content: 以下代码的输出为 >
       ```
-      //html = '<span>Hello world</span>'
+      //new Vue({ data: { html: '<span>Hello world</span>' })
       <p> Message: {{html}} </p>
       ```
     options:
