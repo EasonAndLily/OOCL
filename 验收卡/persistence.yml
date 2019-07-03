@@ -289,7 +289,14 @@ quiz:
       - "@ManyToOne"
     answer: 1
   - content: >
-      如果两张表是以主键关联的，比如Person表主键是id，Address表主键是address_id，以下注解正确的是
+      如果两张表是以主键关联的，比如Person表主键是id，Address表主键是address_id，
+      ```
+      @Entity
+      class Person {
+        private Address address;
+      }
+      ```
+      给address属性添加注解正确的是
     options:
       - "JoinColumn(name = \"id\", referencedColumnName=\"address_id\")"
       - "JoinColumn(referencedColumnName = \"id\", name=\"address_id\")"
@@ -310,6 +317,20 @@ quiz:
       - "V1#Base_version.sql"
       - "V1@create_tables.sql"
     answer: 1,2 
+ - content: >
+      已知存在Flyway脚本文件名为 ```V1.0__add_employees.sql```内容如下
+      ```
+        INSERT INTO employee(name, age) VALUES('zhangsan', 14);
+        INSERT INTO employee(name, age) VALUES('lisi', 19);
+        INSERT INTO employee(name, age) VALUES('wangwu', 20);
+      ```
+      发现lisi的年龄错了，应该是24岁，那么以下正确的更新数据做法是
+   options:
+      - "修改第二行SQL为: INSERT INTO employee(name, age) VALUES('lisi', 24);"
+      - "添加新的脚本文件V1.1_update_employee.sql"
+      - "添加新的脚本文件V1.0_update_employee.sql"
+      - "使用更新语句: UPDATE employee SET age = 24 WHERE name = 'lisi';"
+   answer: 2,3
  - content: > 
       对于Spring JPA你掌握的程度是? 
     options: 
