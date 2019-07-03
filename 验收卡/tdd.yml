@@ -106,25 +106,6 @@ quiz:
     answer: 2
   - content: >
       ```
-      // check user whether has credit card
-      boolean hasCreditCard(User user) {
-          if (user.hasCard) {
-              return true;
-          } else {
-              return false;
-          }
-      }
-      ```
-
-      对上面方法，下面说法错误的是：
-    options:
-      - "该方法根本没有存在的必要"
-      - "该方法的if语句可以更加简洁"
-      - "该方法的注释无任何意义"
-      - "该方法逻辑清晰，代码简洁，符合clean code的规范"
-    answer: 4
-  - content: >
-      ```
       public class HelloWorldTest {
         @BeforeAll
         static void initTestEnv() {}
@@ -173,13 +154,87 @@ quiz:
         sendMessage("A001", "Process Failure", outResult);
       }
       ```
-      上面代码，下面说法正确的是：
+      上面代码，从代码重构(Refactor Code)的角度，下面说法正确的是：
     options:
       - "该代码表意清楚，无懈可击"
       - "可以用三元表达式来判断具体的message"
       - "可以这样优化：sendMessage("A001", messageFromRetCode(retCode), outResult);"
       - "该代码存在魔法数字"
     answer: 2,3,4
+  - content: >
+      ```
+      // check user whether has credit card
+      boolean hasCreditCard(User user) {
+          if (user.hasCard) {
+              return true;
+          } else {
+              return false;
+          }
+      }
+      ```
+
+      对上面方法，从代码整洁(Clean Code)的角度，下面说法错误的是：
+    options:
+      - "该方法根本没有存在的必要"
+      - "该方法的if语句可以更加简洁"
+      - "该方法的注释无任何意义"
+      - "该方法逻辑清晰，代码简洁，符合clean code的规范"
+    answer: 4
+  - content: >
+    要求：假如一家商场对商品正在进行打折，价格在 100 - 200 之间的打八折，其它的按原价出售
+    第一种写法：
+    ```
+    function calculatePrice(price){
+      var result;
+      if (price >= 100 && price < 200) {
+        result = price * 0.8;
+      } else {
+        result = price;
+      }
+      return result;
+    }
+    ```
+    第二种写法：
+    ```
+    function calculatePrice(price) {
+      let result;
+      if (isDiscount(price)) {
+        result = discount(price);
+      } else {
+        result = price;
+      }
+      return result;
+    }
+    function isDiscount(price) {
+      return price >= 100 && price < 200;
+    }
+    function discount(price) {
+      return price * 0.5;
+    }
+    ```
+    第三种写法：
+    ```
+    function calculatePrice(price) {
+      if (isDiscount(price)) {
+        return discount(price);
+      } else {
+      return price;
+      }
+    }
+    function isDiscount(price) {
+      return price >= 100 && price < 200;
+    }
+    function discount(price) {
+      return price * 0.5;
+    }
+    ```
+    从代码整洁(Clean Code)的角度来看，上面三种写法那种更好：
+    options:
+      - 1
+      - 2
+      - 3
+      - 都还行
+    answer: 3
   - content: >
       ```
       public class Account {
