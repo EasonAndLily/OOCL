@@ -1,7 +1,7 @@
 quiz:
   - content: 以下代码的输出为 >
       ```
-      //html = '<span>Hello world</span>'
+      //new Vue({ data: { html: '<span>Hello world</span>' })
       <p> Message: {{html}} </p>
       ```
     options:
@@ -21,7 +21,7 @@ quiz:
   - content: 以下关于计算属性的描述，正确的是
     options:
       - "计算属性就是一个方法，使用时也应当作方法使用"
-      - "计算属性会在其依赖的量发生变化时重新计算属性值"
+      - "计算属性会在其依赖的变量发生变化时重新计算属性值"
       - "计算属性不能设置setter"
       - "在使用计算属性的地方，我们可以通过调用合适的方法来得到同样的返回值"
     answer: [2, 4]

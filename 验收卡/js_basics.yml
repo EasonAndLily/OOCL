@@ -79,13 +79,13 @@ quiz:
       - >
         ```
         var str = "123456";
-        str.subString(1);
+        str.substring(1);
         str //输出123456
         ```
       - >
         ```
         var str = "123456";
-        str.subString(1);
+        str.substring(1);
         str //输出2345
         ```
     answer: 3
@@ -177,7 +177,7 @@ quiz:
       - >
         ```
         function double(collection){
-            for(i = 1; i < collection.length; i++){
+            for(i = 0; i < collection.length; i++){
                 collection[i] = collection[i] * 2;
             }
             return collection;
@@ -256,7 +256,7 @@ quiz:
   - content: "运行完下列代码，输出是:" >
       ```
       function f(collection) {
-          collection.reduce((acc, current) => {
+          return collection.reduce((acc, current) => {
               if (acc.includes(current)) return acc;
               acc.push(current);
               return acc;
@@ -273,11 +273,11 @@ quiz:
   - content: "运行完下列代码，输出是:" >
       ```
       function f(collectionA, collectionB) {
-          return collectionA.filter(a => collectionB.find(a));
+          return collectionA.filter(a => collectionB.includes(a));
       }
       var a = [1, 2, 3, 4, 5, 6, 7, 8];
-      var b = [a, b, 6, d, 7, e ,1];
-      console.log(a, b); 
+      var b = ['a', 'b', 6, 'd', 7, 'e', 1];
+      console.log(f(a, b)); 
       ```
     options:
       - "[1, 2, 6, 7]"
@@ -285,13 +285,13 @@ quiz:
       - "[7, 1, 6]"
       - "[1, 6, 7]"
     answer: 4
-  - content: "以下方式可为对象objectA添加属性name的有:"
+  - content: "以下方式可为对象objectA正确添加属性name的有:"
     options:
       - "objectA.name = 'a';"
       - "objectA[name] = 'a';"
       - "objectA['name'] = 'a';"
-      - "objectA = {...objectA, name: 'a'};"
-    answer: [1, 3, 4]
+      - "objectA = {name: 'a'};"
+    answer: [1, 3]
   - content: "以下方式可可以获取objectA的所有属性的值的有:"
     options:
       - "objectA.map((key, value) => value);"
@@ -344,50 +344,50 @@ quiz:
     answer: 2
   - content: 关于javascript的函数reduce,你了解多少
     options:
-      - 没听说过
-      - 听说过，但不是很清楚
+      - 听说过，但不了解
       - 用过但并不理解概念
-      - 理解概念但没用过
+      - 理解概念但没练习过
       - 理解概念并在练习中使用过
-      - 理解概念并在真实项目中合理使用
+      - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
+      - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
   - content: 关于javascript的函数filter,你了解多少
     options:
-      - 没听说过
-      - 听说过，但不是很清楚
+      - 听说过，但不了解
       - 用过但并不理解概念
-      - 理解概念但没用过
+      - 理解概念但没练习过
       - 理解概念并在练习中使用过
-      - 理解概念并在真实项目中合理使用
+      - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
+      - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
   - content: 关于javascript的函数map,你了解多少
     options:
-      - 没听说过
-      - 听说过，但不是很清楚
+      - 听说过，但不了解
       - 用过但并不理解概念
-      - 理解概念但没用过
+      - 理解概念但没练习过
       - 理解概念并在练习中使用过
-      - 理解概念并在真实项目中合理使用
+      - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
+      - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
   - content: 关于javascript的模版字符串,你了解多少
     options:
-      - 没听说过
-      - 听说过，但不是很清楚
+      - 听说过，但不了解
       - 用过但并不理解概念
-      - 理解概念但没用过
+      - 理解概念但没练习过
       - 理解概念并在练习中使用过
-      - 理解概念并在真实项目中合理使用
-  - content: 关于lambda表达式,你了解多少
+      - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
+      - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
+  - content: 关于箭头函数，你了解多少
     options:
-      - 没听说过
-      - 听说过，但不是很清楚
+      - 听说过，但不了解
       - 用过但并不理解概念
-      - 理解概念但没用过
+      - 理解概念但没练习过
       - 理解概念并在练习中使用过
-      - 理解概念并在真实项目中合理使用
-  - content: 关于函数链式调用,你了解多少
+      - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
+      - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
+  - content: 关于将函数作为参数,你了解多少
     options:
-      - 没听说过
-      - 听说过，但不是很清楚
+      - 听说过，但不了解
       - 用过但并不理解概念
-      - 理解概念但没用过
+      - 理解概念但没练习过
       - 理解概念并在练习中使用过
-      - 理解概念并在真实项目中合理使用
+      - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
+      - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
   - content: "请用概念图解释函数group的含义" 
