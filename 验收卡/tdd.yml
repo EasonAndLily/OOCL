@@ -13,13 +13,6 @@ quiz:
       - "用单元测试的方法写测试"
       - "不需要测试的开发"
     answer: 2
-  - content: "下面属于TDD的优势的是："
-    options:
-      - "Much less debug time"
-      - "Code proven to meet requirements"
-      - "Near zero defects"
-      - "Shorter development cycles"
-    answer: 1,2,3,4
   - content: "Intellij IDEA中给一个类创建其对应的测试类的快捷键是："
     options:
       - "ctrl/cmd + shift + t"
@@ -69,13 +62,6 @@ quiz:
       - "单元测试是一种不需要关注程序结构的测试"
       - "单元测试属于白盒测试的一种"
     answer: 3
-  - content: "以下对单元测试编写的原则，正确的说法是："
-    options:
-      - "每个单元测试必须仅仅测试一个最小的业务单元，符合单一职责原则"
-      - "单元测试之间应当彼此独立，不能互相依赖"
-      - "一个好的单元测试必须从命名到业务实现必须要非常表意，具有很强的可读性，让人一看就知道测试的逻辑意义"
-      - "应当以完成测试覆盖率为目去编写单元测试"
-    answer: 1,2,3
   - content: "对于测试程序的一些命名规则，以下说法正确的一项是："
     options:
       - "测试类的命名只要符合Java类的命名规则就可以了"
@@ -125,7 +111,136 @@ quiz:
       - "hello_world_test initTestEnv initEveryMethod destroyTestEnv"
       - "initTestEnv hello_world_test initEveryMethod destroyTestEnv"
     answer: 1
-- content: >
+  - content: >
+      ```
+      // check user whether has credit card
+      boolean hasCreditCard(User user) {
+          if (user.hasCard) {
+              return true;
+          } else {
+              return false;
+          }
+      }
+      ```
+
+      对上面方法，从代码整洁(Clean Code)的角度，下面说法错误的是：
+    options:
+      - "该方法根本没有存在的必要"
+      - "该方法的if语句可以更加简洁"
+      - "该方法的注释无任何意义"
+      - "该方法逻辑清晰，代码简洁，符合clean code的规范"
+    answer: 4
+  - content: >
+      要求：假如一家商场对商品正在进行打折，价格在 100 - 200 之间的打八折，其它的按原价出售
+      第一种写法：
+      ```
+      function calculatePrice(price){
+        var result;
+        if (price >= 100 && price < 200) {
+          result = price * 0.8;
+        } else {
+          result = price;
+        }
+        return result;
+      }
+      ```
+
+      第二种写法：
+      ```
+      function calculatePrice(price) {
+        let result;
+        if (isDiscount(price)) {
+          result = discount(price);
+        } else {
+          result = price;
+        }
+        return result;
+      }
+      function isDiscount(price) {
+        return price >= 100 && price < 200;
+      }
+      function discount(price) {
+        return price * 0.5;
+      }
+      ```
+
+      第三种写法：
+      ```
+      function calculatePrice(price) {
+        if (isDiscount(price)) {
+          return discount(price);
+        } else {
+        return price;
+        }
+      }
+      function isDiscount(price) {
+        return price >= 100 && price < 200;
+      }
+      function discount(price) {
+        return price * 0.5;
+      }
+      ```
+
+      从代码整洁(Clean Code)的角度来看，上面三种写法那种更好：
+    options:
+      - "1"
+      - "2"
+      - "3"
+      - "都还行"
+    answer: 3
+  - content: > 
+      用TDD的方式来实现一个加法运算，会用到下面的步骤，正确的组合是：
+      1. 写一个测试，输入为两个参数，输出为两个数的和。
+      2. 运行该测试，发现测试失败。
+      3. 编写仅仅使得该测试成功的实现。
+      4. 写另外一个测试，输入为两个参数，输出为两个数的和，运行测试。
+    options:
+      - "1234"
+      - "4213"
+      - "2314"
+      - "3412"
+    answer: 1
+
+  - content: "以下对单元测试编写的原则，正确的说法是："
+    options:
+      - "每个单元测试必须仅仅测试一个最小的业务单元，符合单一职责原则"
+      - "单元测试之间应当彼此独立，不能互相依赖"
+      - "一个好的单元测试必须从命名到业务实现必须要非常表意，具有很强的可读性，让人一看就知道测试的逻辑意义"
+      - "应当以完成测试覆盖率为目去编写单元测试"
+    answer: 1,2,3
+  - content: "下面属于TDD的优势的是："
+    options:
+      - "Much less debug time"
+      - "Code proven to meet requirements"
+      - "Near zero defects"
+      - "Shorter development cycles"
+    answer: 1,2,3,4
+  - content: >
+      ```
+      public class Account {
+          public List<String> getPlans(String accountId) { 
+            //some implements
+          }
+      }
+      public class StockPlan {
+          private Account account;
+          public StockPlan(Account account) {
+              this.account = account;
+          }
+          public List<String> getPlans(String accountId)
+              //some implements
+              return account.getPlans(accountId);
+          }
+      }
+      ```
+      如果需要测试方法getPlans，下面说法正确的是：
+    options:
+      - "可以直接测试getPlans，不需要mock account对象"
+      - "在测试getPlans方法时，需要mock account的对象，但不需要mock getPlans方法"
+      - "在测试getPlans方法是，需要mock account对象，也需要mock getPlans方法"
+      - "用Mockito框架可以实现mock account对象"
+    answer: 3,4
+  - content: >
       ```
       public static int getFactorial(int number) {
           if (number < 0) {
@@ -161,116 +276,6 @@ quiz:
       - "可以这样优化：sendMessage("A001", messageFromRetCode(retCode), outResult);"
       - "该代码存在魔法数字"
     answer: 2,3,4
-  - content: >
-      ```
-      // check user whether has credit card
-      boolean hasCreditCard(User user) {
-          if (user.hasCard) {
-              return true;
-          } else {
-              return false;
-          }
-      }
-      ```
-
-      对上面方法，从代码整洁(Clean Code)的角度，下面说法错误的是：
-    options:
-      - "该方法根本没有存在的必要"
-      - "该方法的if语句可以更加简洁"
-      - "该方法的注释无任何意义"
-      - "该方法逻辑清晰，代码简洁，符合clean code的规范"
-    answer: 4
-  - content: >
-    要求：假如一家商场对商品正在进行打折，价格在 100 - 200 之间的打八折，其它的按原价出售
-    第一种写法：
-    ```
-    function calculatePrice(price){
-      var result;
-      if (price >= 100 && price < 200) {
-        result = price * 0.8;
-      } else {
-        result = price;
-      }
-      return result;
-    }
-    ```
-    第二种写法：
-    ```
-    function calculatePrice(price) {
-      let result;
-      if (isDiscount(price)) {
-        result = discount(price);
-      } else {
-        result = price;
-      }
-      return result;
-    }
-    function isDiscount(price) {
-      return price >= 100 && price < 200;
-    }
-    function discount(price) {
-      return price * 0.5;
-    }
-    ```
-    第三种写法：
-    ```
-    function calculatePrice(price) {
-      if (isDiscount(price)) {
-        return discount(price);
-      } else {
-      return price;
-      }
-    }
-    function isDiscount(price) {
-      return price >= 100 && price < 200;
-    }
-    function discount(price) {
-      return price * 0.5;
-    }
-    ```
-    从代码整洁(Clean Code)的角度来看，上面三种写法那种更好：
-    options:
-      - 1
-      - 2
-      - 3
-      - 都还行
-    answer: 3
-  - content: >
-      ```
-      public class Account {
-          public List<String> getPlans(String accountId) { 
-            //some implements
-          }
-      }
-      public class StockPlan {
-          private Account account;
-          public StockPlan(Account account) {
-              this.account = account;
-          }
-          public List<String> getPlans(String accountId)
-              //some implements
-              return account.getPlans(accountId);
-          }
-      }
-      ```
-      如果需要测试方法getPlans，下面说法正确的是：
-    options:
-      - "可以直接测试getPlans，不需要mock account对象"
-      - "在测试getPlans方法时，需要mock account的对象，但不需要mock getPlans方法"
-      - "在测试getPlans方法是，需要mock account对象，也需要mock getPlans方法"
-      - "用Mockito框架可以实现mock account对象"
-    answer: 3,4
-  - content: > 用TDD的方式来实现一个加法运算，会用到下面的步骤，正确的组合是：
-  1. 写一个测试，输入为两个参数，输出为两个数的和。
-  2. 运行该测试，发现测试失败。
-  3. 编写仅仅使得该测试成功的实现。
-  4. 写另外一个测试，输入为两个参数，输出为两个数的和，运行测试。
-    options:
-      - "1234"
-      - "4213"
-      - "2314"
-      - "3412"
-    answer: 1
 
   - content: "对于TDD，您对它的掌握程度是："
     options:
