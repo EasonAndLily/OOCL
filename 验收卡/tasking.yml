@@ -1,10 +1,10 @@
 quiz:
   - content: "已知一个过程，输入是一个整数数组，每个数都大于0小于53；输出是一个字符串，该字符串均由英文字母组成。例如输入[1, 4, 27],输出'adA',请给过程选择一个合适的名字:"
     options:
-      - "map"
-      - "translate"
-      - "select"
-      - "print"
+      - "mapToString"
+      - "translateNumbersToString"
+      - "selectCorrectString"
+      - "printSpecifiedString"
     answer: 2
   - content: "下面关于任务列表的描述，正确的有"
     options:
