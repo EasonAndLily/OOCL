@@ -79,13 +79,13 @@ quiz:
       - >
         ```
         var str = "123456";
-        str.subString(1);
+        str.substring(1);
         str //输出123456
         ```
       - >
         ```
         var str = "123456";
-        str.subString(1);
+        str.substring(1);
         str //输出2345
         ```
     answer: 3
@@ -177,7 +177,7 @@ quiz:
       - >
         ```
         function double(collection){
-            for(i = 1; i < collection.length; i++){
+            for(i = 0; i < collection.length; i++){
                 collection[i] = collection[i] * 2;
             }
             return collection;
@@ -256,7 +256,7 @@ quiz:
   - content: "运行完下列代码，输出是:" >
       ```
       function f(collection) {
-          collection.reduce((acc, current) => {
+          return collection.reduce((acc, current) => {
               if (acc.includes(current)) return acc;
               acc.push(current);
               return acc;
@@ -273,11 +273,11 @@ quiz:
   - content: "运行完下列代码，输出是:" >
       ```
       function f(collectionA, collectionB) {
-          return collectionA.filter(a => collectionB.find(a));
+          return collectionA.filter(a => collectionB.includes(a));
       }
       var a = [1, 2, 3, 4, 5, 6, 7, 8];
-      var b = [a, b, 6, d, 7, e ,1];
-      console.log(a, b); 
+      var b = ['a', 'b', 6, 'd', 7, 'e', 1];
+      console.log(f(a, b)); 
       ```
     options:
       - "[1, 2, 6, 7]"
