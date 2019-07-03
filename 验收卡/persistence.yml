@@ -104,13 +104,16 @@ quiz:
       - "findOrderByAgeByName"
       - "findByNameOrderByAge"
     answer: 4
-  - content:>
+  - content: >
       在UserRespository中创建一个查询函数,查询要求如下 
+
       ```
+
         - 按name和email字段过滤
         - 忽略大小写
         - 使用DISTINCT标识
       ```
+
       下面哪一项的函数名定义正确
     options:
       - "findDistinctUserByNameOrEmailAllIgnoreCase"
@@ -317,22 +320,22 @@ quiz:
       - "V1#Base_version.sql"
       - "V1@create_tables.sql"
     answer: 1,2 
- - content: >
-      已知存在Flyway脚本文件名为 ```V1.0__add_employees.sql```内容如下
-      ```
-        INSERT INTO employee(name, age) VALUES('zhangsan', 14);
-        INSERT INTO employee(name, age) VALUES('lisi', 19);
-        INSERT INTO employee(name, age) VALUES('wangwu', 20);
-      ```
-      发现lisi的年龄错了，应该是24岁，那么以下正确的更新数据做法是
-   options:
-      - "修改第二行SQL为: INSERT INTO employee(name, age) VALUES('lisi', 24);"
-      - "添加新的脚本文件V1.1_update_employee.sql"
-      - "添加新的脚本文件V1.0_update_employee.sql"
-      - "使用更新语句: UPDATE employee SET age = 24 WHERE name = 'lisi';"
-   answer: 2,3
- - content: > 
-      对于Spring JPA你掌握的程度是? 
+  - content: >
+        已知存在Flyway脚本文件名为 ```V1.0__add_employees.sql```内容如下
+        ```
+          INSERT INTO employee(name, age) VALUES('zhangsan', 14);
+          INSERT INTO employee(name, age) VALUES('lisi', 19);
+          INSERT INTO employee(name, age) VALUES('wangwu', 20);
+        ```
+        发现lisi的年龄错了，应该是24岁，那么以下正确的更新数据做法是
+    options:
+        - "修改第二行SQL为: INSERT INTO employee(name, age) VALUES('lisi', 24);"
+        - "添加新的脚本文件V1.1_update_employee.sql"
+        - "添加新的脚本文件V1.0_update_employee.sql"
+        - "使用更新语句: UPDATE employee SET age = 24 WHERE name = 'lisi';"
+    answer: 2,3
+  - content: > 
+        对于Spring JPA你掌握的程度是? 
     options: 
       - 听说过，但不了解
       - 用过但并不理解概念
@@ -340,8 +343,8 @@ quiz:
       - 理解概念并在练习中使用过
       - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
       - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
- - content: > 
-      对于Spring JPA中的实体注解你掌握的程度是? 
+  - content: > 
+        对于Spring JPA中的实体注解你掌握的程度是? 
     options: 
       - 听说过，但不了解
       - 用过但并不理解概念
@@ -349,8 +352,8 @@ quiz:
       - 理解概念并在练习中使用过
       - 知道为何要在练习中使用此概念，并明白在练习中如何使用它
       - 能够识别该技术的主要应用场景或者解决的问题，并能熟练使用
- - content: > 
-      对于Flyway你掌握的程度是? 
+  - content: > 
+        对于Flyway你掌握的程度是? 
     options: 
       - 听说过，但不了解
       - 用过但并不理解概念
