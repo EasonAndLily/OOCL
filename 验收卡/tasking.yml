@@ -184,58 +184,66 @@ quiz:
           }
         ```
     answer: 4
-  - content: "你想从从测试的角度描述findBookInfoByISBN，那么最合适的测试用例组合有:"
-    options:
-      - >
-        ```
-        用例:
-          "123abc1234"
-          ----
+  - content: "你想从从测试的角度描述findBookInfoByISBN的功能，那么最合适的测试用例组合是:" > 
+      ```
+      测试用例1:
+        Given:
+          ISBN: "123abc1234"
+        ----
+        输出:
           {
             ISBN: "123abc1234",
             name: "JavaScript"
           }
-        ```
-      - >
-        ```
-        用例:
-          "123abc1234"
-          [{
+      ```
+      ```
+      测试用例2:
+        Given:
+          ISBN: "123abc1234",
+          ISBNIndex: [{
             ISBN: "321123abdc",
             name: "Java"
           }]
-          ----
+        ----
+        输出:
           {}
-        ```
-      - >
-        ```
-        用例:
-          "321123abdc"
-          [{
+      ```
+      ```
+      测试用例3:
+        Given:
+          ISBN: "321123abdc",
+          ISBNIndex: [{
             ISBN: "123abd1234",
             name: "JavaScript"
           }]
-          ----
+        ----
+        输出:
           {}
-        ```
-      - >
-        ```
-        用例:
-          "123abc1234"
-          [{
+      ```
+      ```
+      测试用例4:
+        Given:
+          ISBN: "123abc1234",
+          ISBNIndex: [{
             ISBN: "123abd1234",
             name: "JavaScript"
           }, {
             ISBN: "321123abdc",
             name: "Java"
           }]
-          ----
+        ----
+        输出:
           {
             ISBN: "123abc1234",
             name: "JavaScript"
           }
-        ```
-    answer: [2, 4]
+      ```
+    options:
+      - "测试用例1， 测试用例3"
+      - "测试用例2， 测试用例4"
+      - "测试用例2， 测试用例3"
+      - "测试用例1， 测试用例2"
+    answer: 2
   - content: "表格repository只能添加或删除记录，不能修改记录，那么对于任务'loadRepository'对应的任务图,最合适的是:"
     options:
       - ![loadRepositoryA](验收卡/image/tasking/loadRepository_A.png)
