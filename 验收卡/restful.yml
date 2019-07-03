@@ -103,14 +103,6 @@ quiz:
       - "WebEnvironment.NONE"
     answer: 2,3
   - content: >
-      基于Mockito的话，以下哪一个注解可以直接Mock一个类的实例并代替Spring容器中的真实实例
-    options:
-      - "@Bean"
-      - "@MockBean"
-      - "@Mock"
-      - "@Component"
-    answer: 2
-  - content: >
       Mockito中@Mock和@MockBean的区别描述正确的是
     options:
       - "@MockBean是@Mock的替换者"
@@ -162,6 +154,22 @@ quiz:
       - "测试速度缓慢"
       - "直接使用网络的形式，转换到Controller的调用"
     answer: 4 
+  - content: >
+      如何使用MockMvc来测试Get请求 ```users/{id}```
+    options:
+      - "mvc.perform(get(\"/users/\").content(id)"
+      - "mvc.perform(get(\"/users/\", id)"
+      - "mvc.perform(get(\"/users/\" + id)"
+      - "mvc.perform(get(\"/users/\").param(\"id\", id)"
+    answer: 2
+  - content: >
+      如何使用MockMvc来测试Post请求```/users```,RequestBody为json
+    options:
+      - "mvc.perform(post(\"/users\").content(json)"
+      - "mvc.perform(post(\"/users\", json)"
+      - "mvc.perform(post(\"/users\").param(\"body\", json)"
+      - "mvc.perform(post(\"/users\").content(json).contentType(MediaType.APPLICATION_JSON)"
+    answer: 4
   - content: > 
       如果使用MockMvc来测试Controller,  以下代码哪一项是验证返回的Http Code是400
     options:
