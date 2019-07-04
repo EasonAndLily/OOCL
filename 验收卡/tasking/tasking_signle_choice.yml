@@ -197,7 +197,7 @@ quiz:
     answer: 2
   - content: "3.表格repository只能添加或删除记录，不能修改记录，那么对于任务'loadRepository'对应的任务图,最合适的是:" > 
       图A ![loadRepertoryA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_A.png?raw=true)  
-      图B ![loadRepertoryB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_B.png?raw=true)  
+      图B ![loadRepertoryB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_B.png?raw=true)  
       图C ![loadRepertoryC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_C.png?raw=true)  
       图D ![loadRepertoryD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_D.png?raw=true)  
     options:
