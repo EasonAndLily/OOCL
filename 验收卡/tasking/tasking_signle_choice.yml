@@ -196,10 +196,10 @@ quiz:
       - "测试用例1， 测试用例2"
     answer: 2
   - content: "3.表格repository只能添加或删除记录，不能修改记录，那么对于任务'loadRepository'对应的任务图,最合适的是:" > 
-      图A ![loadRepertoryA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_A.png)  
-      图B ![loadRepertoryB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_B.png)  
-      图C ![loadRepertoryC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_C.png)  
-      图D ![loadRepertoryD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_D.png)  
+      图A ![loadRepertoryA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_A.png?raw=true)  
+      图B ![loadRepertoryB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_B.png?raw=true)  
+      图C ![loadRepertoryC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_C.png?raw=true)  
+      图D ![loadRepertoryD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_D.png?raw=true)  
     options:
       - 图A
       - 图B
@@ -329,10 +329,10 @@ quiz:
         ```
     answer: 2
   - content: "7.任务printRepertory正确的任务图是：" >
-      图A ![printRepertoryA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_A.png)  
-      图B ![printRepertoryB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_B.png)  
-      图C ![printRepertoryC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_C.png)  
-      图D ![printRepertoryD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_D.png)  
+      图A ![printRepertoryA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_A.png?raw=true)  
+      图B ![printRepertoryB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_B.png?raw=true)  
+      图C ![printRepertoryC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_C.png?raw=true)  
+      图D ![printRepertoryD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory_D.png?raw=true)  
     options:
       - 图A
       - 图B
@@ -340,10 +340,10 @@ quiz:
       - 图D
     answer: 2
   - content: "8.当你分析完所有任务之后发现，printRepertory的负担太重了，所以你又新拆出来了一个任务，该任务对应的任务图是" >
-      图A ![coverToBookInfoA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_A.png)
-      图B ![coverToBookInfoB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_B.png)
-      图C ![coverToBookInfoC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_C.png)
-      图D ![coverToBookInfoD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_D.png)
+      图A ![coverToBookInfoA](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_A.png?raw=true)
+      图B ![coverToBookInfoB](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_B.png?raw=true)
+      图C ![coverToBookInfoC](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_C.png?raw=true)
+      图D ![coverToBookInfoD](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/coverToBookInfo_D.png?raw=true)
     options:
       - 图A
       - 图B
@@ -351,10 +351,10 @@ quiz:
       - 图D
     answer: 3
   - content: "9.修改之后的printRepertory对应的任务图是" >
-      图A ![loadRepertory2A](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory2_A.png)
-      图B ![loadRepertory2B](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_B.png) 
-      图C ![loadRepertory2C](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_C.png) 
-      图D ![loadRepertory2D](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_D.png) 
+      图A ![loadRepertory2A](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/printRepertory2_A.png?raw=true)
+      图B ![loadRepertory2B](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_B.png?raw=true) 
+      图C ![loadRepertory2C](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_C.png?raw=true) 
+      图D ![loadRepertory2D](https://github.com/EasonAndLily/OOCL/blob/master/验收卡/image/tasking/loadRepertory_D.png?raw=true) 
     options:
       - 图A
       - 图B
