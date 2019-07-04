@@ -1,0 +1,189 @@
+quiz:
+  - content: "以下输出正确的有:" >
+
+      ```
+      //选项A
+      var str = "123456";
+      str.slice(1);
+      str //输出3456
+      ```
+
+      ```
+      //选项B
+      var str = "123456";
+      str.slice(1); //输出3456
+      ```
+
+      ```
+      //选项C
+      var str = "123456";
+      str.substring(1);
+      str //输出123456
+      ```
+
+      ```
+      //选项D
+      var str = "123456";
+      str.substring(1);
+      str //输出2345
+      ```
+
+    options:
+      - "A"
+      - "B"
+      - "C"
+      - "D"
+    answer: 3
+  - content: "以下函数，能够找出数字数组collection中大于0的元素的有:" > 
+
+      ```
+      //选项A
+      function positiveNumber(collection){
+          return collection.filter((item) => item > 0);
+      }
+      ```
+
+      ```
+      //选项B
+      function positiveNumber(collection){
+          let positive = [];
+          for(i = 0; i < collection.length; i++){
+              if (collection[i] <= 0)  return;
+              positive.push(collection[i]);
+          }
+          return positive;
+      }
+      ```
+
+      ```
+      //选项C
+      function positiveNumber(collection){
+          let positive = 0;
+          for(item in collection){
+              positive.push(item);
+          }
+          return positive;
+      }
+      ```
+
+      ```
+      //选项D
+      function positiveNumber(collection){
+          for(i = 0; i < collection.length; i++){
+              if (collection[i] <= 0) {
+                  collection = collection.slice(0, i).concat(collection.slice(i + 1));
+              }
+          }
+          return collection;
+      }
+      ```
+
+    options:
+      - "A"
+      - "B"
+      - "C"
+      - "D"
+    answer: 1
+  - content: "运行完下列代码，输出是:" >
+
+      ```
+      function f(collection) {
+          return collection.reduce((acc, current) => {
+              if (acc.find(a => a.key == current)){
+                  return acc;
+              }
+              acc.push({key: current, value: collection.filter(c => c == current)});
+              return acc;
+          }, [])
+      }
+      var col = [
+          1, 1, 1, 1,
+          2, 2,
+          '1', '1',
+          '2'];
+      console.log(f(col));
+    ```
+
+    options:
+      - >
+        "
+        [
+            {key: 1, value:[1, 1, 1, 1]},
+            {key: 2, value:[2, 2]},
+            {key: '1', value:['1', '1']},
+            {key: '2', value:['2']}
+        ]
+        "
+      - >
+        "
+        [
+            {key: 1, value:[1, 1, 1, 1, '1', '1']},
+            {key: 2, value:[2, 2, '2']}
+        ]
+        "
+      - >
+        "
+        [
+            {key: 1, value: 4},
+            {key: 2, value: 2},
+            {key: '1', value: 2},
+            {key: '2', value: 1}
+        ]
+        "
+      - >
+        "
+        [
+            {key: 1, value: 6},
+            {key: 2, value: 3},
+        ]
+        "
+    answer: 2
+  - content: "运行完下列代码，输出是:" >
+      ```
+      function f(collection) {
+          return collection.reduce((acc, current) => {
+              if (acc.includes(current)) return acc;
+              acc.push(current);
+              return acc;
+          }, [])
+      }
+      console.log(f([1,2,3,3,4,2,5,6,3,44,5]))
+      ```
+    options:
+      - "[1, 2, 3, 4, 5, 6, 44]"
+      - "[1, 2, 3, 4, 5, 6]"
+      - "[1, 4, 6, 44]"
+      - "[2, 3, 5]"
+    answer: 1
+  - content: "运行完下列代码，输出是:" >
+      ```
+      function f(collectionA, collectionB) {
+          return collectionA.filter(a => collectionB.includes(a));
+      }
+      var a = [1, 2, 3, 4, 5, 6, 7, 8];
+      var b = ['a', 'b', 6, 'd', 7, 'e', 1];
+      console.log(f(a, b)); 
+      ```
+    options:
+      - "[1, 2, 6, 7]"
+      - "[6, 2, 7, 1]"
+      - "[7, 1, 6]"
+      - "[1, 6, 7]"
+    answer: 4
+  - content: "以下对函数链式调用的描述，正确的有:"
+    options:
+      - "函数链中，所有函数的参数和返回值都是同一种数据类型"
+      - "函数链中，后一个函数的输入是前一个函数的输出"
+      - "[1,2,3].foreach(...).map(...)就是一个函数链.(...代表省略具体使用方式)"
+      - "只有数组才能作为函数链的第一个传入参数"
+    answer: 2
+  - content: "对下列表达式,描述正确的有:" >
+      ```
+      [1, 2, 3, 4, 5, 6].map(i => i * 2).filter(i => i > 3).reduce((a, b) => a + b);
+      ```
+    options:
+      - "表达式不能正常执行"
+      - "表达式的执行结果为40"
+      - "表达式没有返回值"
+      - "表达式表达式的执行结果为42"
+    answer: 2
